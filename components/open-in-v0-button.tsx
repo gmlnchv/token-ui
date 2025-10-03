@@ -1,5 +1,5 @@
-import { Button } from "@/registry/ui/button"
-import { cn } from "@/lib/utils"
+import { Button } from '@/registry/ui/button'
+import { cn } from '@/lib/utils'
 
 export function OpenInV0Button({
   name,
@@ -10,8 +10,8 @@ export function OpenInV0Button({
       aria-label="Open in v0"
       size="sm"
       className={cn(
-        "shadow-none bg-black text-white hover:bg-black hover:text-white dark:bg-white dark:text-black",
-        className
+        'shadow-none bg-black text-white hover:bg-black hover:text-white dark:bg-white dark:text-black',
+        className,
       )}
       asChild
     >
@@ -20,7 +20,7 @@ export function OpenInV0Button({
         target="_blank"
         rel="noreferrer"
       >
-        Open in{" "}
+        Open in{' '}
         <svg
           viewBox="0 0 40 20"
           fill="none"
