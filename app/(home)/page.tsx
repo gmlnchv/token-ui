@@ -16,7 +16,7 @@ export default function Home() {
           </p>
 
           <Button asChild>
-            <Link href="/docs">Get Started</Link>
+            <Link href="/docs/get-started/introduction">Get Started</Link>
           </Button>
         </div>
       </main>
