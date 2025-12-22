@@ -1,17 +1,230 @@
 ---
 title: Token
-description: The Token component presents a design token in a clean, consistent format.
+description: A tooltip-based component for documenting design tokens with visual feedback, perfect for design system documentation.
 ---
 
-## Install
+import { Token, ColorToken } from '@/registry/ui/token'
+
+## Overview
+
+Token components help you document design tokens in your design system with an interactive, consistent format. When users hover over a token, they see its value in a tooltip—essential for documenting colors, spacing, typography, and other design primitives.
+
+Token UI provides two main variants:
+
+- **Token** - For general design tokens like spacing, typography scales, border radii, etc.
+- **ColorToken** - Specialized for color tokens with a visual color indicator
+
+These components are built with accessibility in mind, using Radix UI's Tooltip and shadcn/ui's Button components under the hood.
+
+## Installation
 
 <Installer packageName="token" />
 
+## Usage
 
-## Features
+### Basic Token
 
-...
+Use the `Token` component to document any design token. The token name appears as a button, and hovering reveals the value:
+
+<Preview code={`import { Token } from '@/components/ui/token'
+
+<div className="flex gap-2 flex-wrap">
+  <Token name="spacing-xs" value="4px" />
+  <Token name="spacing-sm" value="8px" />
+  <Token name="spacing-md" value="16px" />
+  <Token name="spacing-lg" value="24px" />
+  <Token name="spacing-xl" value="32px" />
+</div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <Token name="spacing-xs" value="4px" />
+    <Token name="spacing-sm" value="8px" />
+    <Token name="spacing-md" value="16px" />
+    <Token name="spacing-lg" value="24px" />
+    <Token name="spacing-xl" value="32px" />
+  </div>
+</Preview>
+
+### ColorToken
+
+Use the `ColorToken` component for color palettes. It displays a color indicator circle alongside the token name:
+
+<Preview code={`import { ColorToken } from '@/components/ui/token'
+
+<div className="flex gap-2 flex-wrap">
+  <ColorToken name="primary" value="#3b82f6" />
+  <ColorToken name="secondary" value="#8b5cf6" />
+  <ColorToken name="success" value="#10b981" />
+  <ColorToken name="warning" value="#f59e0b" />
+  <ColorToken name="danger" value="#ef4444" />
+</div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <ColorToken name="primary" value="#3b82f6" />
+    <ColorToken name="secondary" value="#8b5cf6" />
+    <ColorToken name="success" value="#10b981" />
+    <ColorToken name="warning" value="#f59e0b" />
+    <ColorToken name="danger" value="#ef4444" />
+  </div>
+</Preview>
 
 ## Examples
 
-...
+### Typography Scale
+
+Document your typography tokens with their computed pixel values:
+
+<Preview code={`import { Token } from '@/components/ui/token'
+
+<div className="space-y-4">
+  <div>
+    <h3 className="text-sm font-medium mb-2">Font Sizes</h3>
+    <div className="flex gap-2 flex-wrap">
+      <Token name="text-xs" value="0.75rem (12px)" />
+      <Token name="text-sm" value="0.875rem (14px)" />
+      <Token name="text-base" value="1rem (16px)" />
+      <Token name="text-lg" value="1.125rem (18px)" />
+      <Token name="text-xl" value="1.25rem (20px)" />
+      <Token name="text-2xl" value="1.5rem (24px)" />
+    </div>
+  </div>
+</div>`}>
+  <div className="space-y-4">
+    <div>
+      <h3 className="text-sm font-medium mb-2">Font Sizes</h3>
+      <div className="flex gap-2 flex-wrap">
+        <Token name="text-xs" value="0.75rem (12px)" />
+        <Token name="text-sm" value="0.875rem (14px)" />
+        <Token name="text-base" value="1rem (16px)" />
+        <Token name="text-lg" value="1.125rem (18px)" />
+        <Token name="text-xl" value="1.25rem (20px)" />
+        <Token name="text-2xl" value="1.5rem (24px)" />
+      </div>
+    </div>
+  </div>
+</Preview>
+
+### Color Palette Grid
+
+Create organized color palette documentation:
+
+<Preview code={`import { ColorToken } from '@/components/ui/token'
+
+<div className="space-y-6">
+  <div>
+    <h3 className="text-sm font-medium mb-3">Blue Scale</h3>
+    <div className="flex gap-2 flex-wrap">
+      <ColorToken name="blue-50" value="#eff6ff" />
+      <ColorToken name="blue-100" value="#dbeafe" />
+      <ColorToken name="blue-200" value="#bfdbfe" />
+      <ColorToken name="blue-500" value="#3b82f6" />
+      <ColorToken name="blue-900" value="#1e3a8a" />
+    </div>
+  </div>
+  
+  <div>
+    <h3 className="text-sm font-medium mb-3">Semantic Colors</h3>
+    <div className="flex gap-2 flex-wrap">
+      <ColorToken name="primary" value="#3b82f6" />
+      <ColorToken name="secondary" value="#64748b" />
+      <ColorToken name="accent" value="#8b5cf6" />
+    </div>
+  </div>
+</div>`}>
+  <div className="space-y-6">
+    <div>
+      <h3 className="text-sm font-medium mb-3">Blue Scale</h3>
+      <div className="flex gap-2 flex-wrap">
+        <ColorToken name="blue-50" value="#eff6ff" />
+        <ColorToken name="blue-100" value="#dbeafe" />
+        <ColorToken name="blue-200" value="#bfdbfe" />
+        <ColorToken name="blue-500" value="#3b82f6" />
+        <ColorToken name="blue-900" value="#1e3a8a" />
+      </div>
+    </div>
+    
+    <div>
+      <h3 className="text-sm font-medium mb-3">Semantic Colors</h3>
+      <div className="flex gap-2 flex-wrap">
+        <ColorToken name="primary" value="#3b82f6" />
+        <ColorToken name="secondary" value="#64748b" />
+        <ColorToken name="accent" value="#8b5cf6" />
+      </div>
+    </div>
+  </div>
+</Preview>
+
+## Props
+
+### TokenProps
+
+Both `Token` and `ColorToken` accept the same props:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `name` | `string` | - | The token name displayed on the button (required) |
+| `value` | `string` | - | The token value shown in the tooltip on hover (required) |
+| `children` | `ReactNode` | - | Custom content (overrides default rendering) |
+| `...props` | `TooltipProps` | - | Additional props passed to the underlying Tooltip component |
+
+### Inherited Props
+
+Since Token components wrap Radix UI's Tooltip, you can pass any [Tooltip props](https://www.radix-ui.com/primitives/docs/components/tooltip) such as:
+
+- `open` - Control tooltip visibility
+- `defaultOpen` - Default open state
+- `onOpenChange` - Callback when open state changes
+- `delayDuration` - Hover delay (default: 200ms)
+
+### Extending with Custom Indicators
+
+Create reusable token variants by combining the base pattern with custom visual indicators:
+
+```tsx
+// Custom ShapeToken with shape preview
+function ShapeToken({ name, value }: { name: string; value: string }) {
+  return (
+    <Tooltip delayDuration={200}>
+      <TooltipTrigger asChild>
+        <Button variant="outline">
+          <div
+            style={{
+              width: 12,
+              height: 12,
+              borderRadius: value,
+              backgroundColor: 'currentColor',
+              marginRight: 8,
+              display: 'inline-block',
+            }}
+          />
+          {name}
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent>{value}</TooltipContent>
+    </Tooltip>
+  )
+}
+```
+
+### Customizing Tooltip Behavior
+
+Control tooltip behavior with additional props:
+
+```tsx
+// Longer delay for dense documentation
+<Token name="spacing-md" value="16px" delayDuration={500} />
+
+// Controlled tooltip
+function ControlledToken() {
+  const [open, setOpen] = React.useState(false)
+  
+  return (
+    <Token
+      name="spacing-md"
+      value="16px"
+      open={open}
+      onOpenChange={setOpen}
+    />
+  )
+}
+```
+
+For more specialized token variants, consider extending the basic pattern shown in the Advanced Usage section.

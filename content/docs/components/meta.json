@@ -1,1 +1,4 @@
-{}
+{
+  "pages": ["token"],
+  "defaultOpen": true
+}
