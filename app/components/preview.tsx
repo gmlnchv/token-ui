@@ -10,7 +10,7 @@ type PreviewProps = {
 
 export function Preview({ children, code }: PreviewProps) {
   return (
-    <div className="overflow-hidden rounded-lg border bg-background my-6 not-prose">
+    <div className="not-prose my-6 overflow-hidden rounded-lg border bg-background">
       <Tabs defaultValue="preview" className="gap-0">
         <TabsList className="w-full rounded-none border-b">
           <TabsTrigger value="code">Code</TabsTrigger>
@@ -18,7 +18,7 @@ export function Preview({ children, code }: PreviewProps) {
         </TabsList>
 
         <TabsContent value="code" className="overflow-y-auto bg-background">
-          <pre className="p-4 bg-muted/50 overflow-x-auto m-0">
+          <pre className="m-0 overflow-x-auto bg-muted/50 p-4">
             <code className="text-sm">{code}</code>
           </pre>
         </TabsContent>
