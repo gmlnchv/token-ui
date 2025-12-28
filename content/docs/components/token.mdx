@@ -3,26 +3,17 @@ title: Token
 description: A tooltip-based component for documenting design tokens with visual feedback, perfect for design system documentation.
 ---
 
-import { Token, ColorToken } from '@/registry/ui/token'
+import { Token } from '@/registry/ui/token'
 
 ## Overview
 
 Token components help you document design tokens in your design system with an interactive, consistent format. When users hover over a token, they see its value in a tooltip—essential for documenting colors, spacing, typography, and other design primitives.
-
-Token UI provides two main variants:
-
-- **Token** - For general design tokens like spacing, typography scales, border radii, etc.
-- **ColorToken** - Specialized for color tokens with a visual color indicator
-
-These components are built with accessibility in mind, using Radix UI's Tooltip and shadcn/ui's Button components under the hood.
 
 ## Installation
 
 <Installer packageName="token" />
 
 ## Usage
-
-### Basic Token
 
 Use the `Token` component to document any design token. The token name appears as a button, and hovering reveals the value:
 
@@ -43,80 +34,3 @@ Use the `Token` component to document any design token. The token name appears a
     <Token name="spacing-xl" value="32px" />
   </div>
 </Preview>
-
-## Props
-
-### TokenProps
-
-Both `Token` and `ColorToken` accept the same props:
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `name` | `string` | - | The token name displayed on the button (required) |
-| `value` | `string` | - | The token value shown in the tooltip on hover (required) |
-| `children` | `ReactNode` | - | Custom content (overrides default rendering) |
-| `...props` | `TooltipProps` | - | Additional props passed to the underlying Tooltip component |
-
-### Inherited Props
-
-Since Token components wrap Radix UI's Tooltip, you can pass any [Tooltip props](https://www.radix-ui.com/primitives/docs/components/tooltip) such as:
-
-- `open` - Control tooltip visibility
-- `defaultOpen` - Default open state
-- `onOpenChange` - Callback when open state changes
-- `delayDuration` - Hover delay (default: 200ms)
-
-### Extending with Custom Indicators
-
-Create reusable token variants by combining the base pattern with custom visual indicators:
-
-```tsx
-// Custom ShapeToken with shape preview
-function ShapeToken({ name, value }: { name: string; value: string }) {
-  return (
-    <Tooltip delayDuration={200}>
-      <TooltipTrigger asChild>
-        <Button variant="outline">
-          <div
-            style={{
-              width: 12,
-              height: 12,
-              borderRadius: value,
-              backgroundColor: 'currentColor',
-              marginRight: 8,
-              display: 'inline-block',
-            }}
-          />
-          {name}
-        </Button>
-      </TooltipTrigger>
-      <TooltipContent>{value}</TooltipContent>
-    </Tooltip>
-  )
-}
-```
-
-### Customizing Tooltip Behavior
-
-Control tooltip behavior with additional props:
-
-```tsx
-// Longer delay for dense documentation
-<Token name="spacing-md" value="16px" delayDuration={500} />
-
-// Controlled tooltip
-function ControlledToken() {
-  const [open, setOpen] = React.useState(false)
-  
-  return (
-    <Token
-      name="spacing-md"
-      value="16px"
-      open={open}
-      onOpenChange={setOpen}
-    />
-  )
-}
-```
-
-For more specialized token variants, consider extending the basic pattern shown in the Advanced Usage section.
