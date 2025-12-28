@@ -28,127 +28,19 @@ Use the `Token` component to document any design token. The token name appears a
 
 <Preview code={`import { Token } from '@/components/ui/token'
 
-<div className="flex gap-2 flex-wrap">
-  <Token name="spacing-xs" value="4px" />
-  <Token name="spacing-sm" value="8px" />
-  <Token name="spacing-md" value="16px" />
-  <Token name="spacing-lg" value="24px" />
-  <Token name="spacing-xl" value="32px" />
-</div>`}>
   <div className="flex gap-2 flex-wrap">
     <Token name="spacing-xs" value="4px" />
     <Token name="spacing-sm" value="8px" />
     <Token name="spacing-md" value="16px" />
     <Token name="spacing-lg" value="24px" />
     <Token name="spacing-xl" value="32px" />
-  </div>
-</Preview>
-
-### ColorToken
-
-Use the `ColorToken` component for color palettes. It displays a color indicator circle alongside the token name:
-
-<Preview code={`import { ColorToken } from '@/components/ui/token'
-
-<div className="flex gap-2 flex-wrap">
-  <ColorToken name="primary" value="#3b82f6" />
-  <ColorToken name="secondary" value="#8b5cf6" />
-  <ColorToken name="success" value="#10b981" />
-  <ColorToken name="warning" value="#f59e0b" />
-  <ColorToken name="danger" value="#ef4444" />
-</div>`}>
+  </div>`}>
   <div className="flex gap-2 flex-wrap">
-    <ColorToken name="primary" value="#3b82f6" />
-    <ColorToken name="secondary" value="#8b5cf6" />
-    <ColorToken name="success" value="#10b981" />
-    <ColorToken name="warning" value="#f59e0b" />
-    <ColorToken name="danger" value="#ef4444" />
-  </div>
-</Preview>
-
-## Examples
-
-### Typography Scale
-
-Document your typography tokens with their computed pixel values:
-
-<Preview code={`import { Token } from '@/components/ui/token'
-
-<div className="space-y-4">
-  <div>
-    <h3 className="text-sm font-medium mb-2">Font Sizes</h3>
-    <div className="flex gap-2 flex-wrap">
-      <Token name="text-xs" value="0.75rem (12px)" />
-      <Token name="text-sm" value="0.875rem (14px)" />
-      <Token name="text-base" value="1rem (16px)" />
-      <Token name="text-lg" value="1.125rem (18px)" />
-      <Token name="text-xl" value="1.25rem (20px)" />
-      <Token name="text-2xl" value="1.5rem (24px)" />
-    </div>
-  </div>
-</div>`}>
-  <div className="space-y-4">
-    <div>
-      <h3 className="text-sm font-medium mb-2">Font Sizes</h3>
-      <div className="flex gap-2 flex-wrap">
-        <Token name="text-xs" value="0.75rem (12px)" />
-        <Token name="text-sm" value="0.875rem (14px)" />
-        <Token name="text-base" value="1rem (16px)" />
-        <Token name="text-lg" value="1.125rem (18px)" />
-        <Token name="text-xl" value="1.25rem (20px)" />
-        <Token name="text-2xl" value="1.5rem (24px)" />
-      </div>
-    </div>
-  </div>
-</Preview>
-
-### Color Palette Grid
-
-Create organized color palette documentation:
-
-<Preview code={`import { ColorToken } from '@/components/ui/token'
-
-<div className="space-y-6">
-  <div>
-    <h3 className="text-sm font-medium mb-3">Blue Scale</h3>
-    <div className="flex gap-2 flex-wrap">
-      <ColorToken name="blue-50" value="#eff6ff" />
-      <ColorToken name="blue-100" value="#dbeafe" />
-      <ColorToken name="blue-200" value="#bfdbfe" />
-      <ColorToken name="blue-500" value="#3b82f6" />
-      <ColorToken name="blue-900" value="#1e3a8a" />
-    </div>
-  </div>
-  
-  <div>
-    <h3 className="text-sm font-medium mb-3">Semantic Colors</h3>
-    <div className="flex gap-2 flex-wrap">
-      <ColorToken name="primary" value="#3b82f6" />
-      <ColorToken name="secondary" value="#64748b" />
-      <ColorToken name="accent" value="#8b5cf6" />
-    </div>
-  </div>
-</div>`}>
-  <div className="space-y-6">
-    <div>
-      <h3 className="text-sm font-medium mb-3">Blue Scale</h3>
-      <div className="flex gap-2 flex-wrap">
-        <ColorToken name="blue-50" value="#eff6ff" />
-        <ColorToken name="blue-100" value="#dbeafe" />
-        <ColorToken name="blue-200" value="#bfdbfe" />
-        <ColorToken name="blue-500" value="#3b82f6" />
-        <ColorToken name="blue-900" value="#1e3a8a" />
-      </div>
-    </div>
-    
-    <div>
-      <h3 className="text-sm font-medium mb-3">Semantic Colors</h3>
-      <div className="flex gap-2 flex-wrap">
-        <ColorToken name="primary" value="#3b82f6" />
-        <ColorToken name="secondary" value="#64748b" />
-        <ColorToken name="accent" value="#8b5cf6" />
-      </div>
-    </div>
+    <Token name="spacing-xs" value="4px" />
+    <Token name="spacing-sm" value="8px" />
+    <Token name="spacing-md" value="16px" />
+    <Token name="spacing-lg" value="24px" />
+    <Token name="spacing-xl" value="32px" />
   </div>
 </Preview>
 
