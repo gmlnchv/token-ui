@@ -1,0 +1,36 @@
+---
+title: ColorToken
+description: A specialized component for documenting color tokens in design systems with visual color swatches.
+---
+
+import { ColorToken } from '@/registry/ui/token'
+
+## Overview
+
+**ColorToken** is a specialized variant of the Token component designed specifically for documenting color values in your Design System. It displays a color swatch indicator next to the token name, making it easy to visually identify and reference colors while still maintaining the same interactive tooltip behavior for value display.
+
+## Installation
+
+<Installer packageName="token" />
+
+## Usage
+
+Use the `ColorToken` component to document color tokens. Each token displays with a circular color swatch that visually represents the color value:
+
+<Preview code={`import { ColorToken } from '@/components/ui/token'
+
+  <div className="flex gap-2 flex-wrap">
+    <ColorToken name="Primary" value="#3B82F6" />
+    <ColorToken name="Secondary" value="#10B981" />
+    <ColorToken name="Danger" value="#EF4444" />
+    <ColorToken name="Warning" value="#F59E0B" />
+    <ColorToken name="Success" value="#06B6D4" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <ColorToken name="Primary" value="#3B82F6" />
+    <ColorToken name="Secondary" value="#10B981" />
+    <ColorToken name="Danger" value="#EF4444" />
+    <ColorToken name="Warning" value="#F59E0B" />
+    <ColorToken name="Success" value="#06B6D4" />
+  </div>
+</Preview>
