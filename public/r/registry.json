@@ -4,11 +4,50 @@
   "homepage": "https://tokenui.dev",
   "items": [
     {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "A button component with multiple variants and sizes.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "A tooltip component for displaying contextual information.",
+      "dependencies": ["@radix-ui/react-tooltip"],
+      "files": [
+        {
+          "path": "registry/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "token",
       "type": "registry:ui",
       "title": "Token",
       "description": "A tooltip-based component for documenting design tokens.",
       "registryDependencies": ["@tokenui/tooltip", "@tokenui/button"],
+      "files": [
+        {
+          "path": "registry/ui/token.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "color-token",
+      "type": "registry:ui",
+      "title": "ColorToken",
+      "description": "A specialized component for documenting color tokens with visual swatches.",
+      "registryDependencies": ["@tokenui/token"],
       "files": [
         {
           "path": "registry/ui/token.tsx",
