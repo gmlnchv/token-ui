@@ -1,14 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "token-ui",
-  "homepage": "https://token-ui.com",
+  "name": "tokenui",
+  "homepage": "https://tokenui.dev",
   "items": [
     {
       "name": "token",
       "type": "registry:ui",
       "title": "Token",
       "description": "A tooltip-based component for documenting design tokens.",
-      "registryDependencies": ["@token-ui/tooltip", "@token-ui/button"],
+      "registryDependencies": ["@tokenui/tooltip", "@tokenui/button"],
       "files": [
         {
           "path": "registry/ui/token.tsx",
