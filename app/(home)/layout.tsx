@@ -16,8 +16,8 @@ export default function Layout({ children }: { children: ReactNode }) {
       }}
       links={[
         {
-          text: 'Documentation',
-          url: '/docs',
+          text: 'Components',
+          url: '/docs/components/token',
         },
       ]}
     >
