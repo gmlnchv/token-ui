@@ -3,7 +3,7 @@ title: Token
 description: A component for displaying name/value pairs as interactive tooltips. Serves as the base primitive for specialized token variants.
 ---
 
-import { Token } from '@/registry/ui/token'
+import { Token } from '@/registry/components/token'
 
 ## Overview
 
@@ -17,7 +17,7 @@ import { Token } from '@/registry/ui/token'
 
 Use the `Token` component to document any design token. The token name appears as a button, and hovering reveals the value:
 
-<Preview code={`import { Token } from '@/components/ui/token'
+<Preview code={`import { Token } from '@/components/token'
 
   <div className="flex gap-2 flex-wrap">
     <Token name="spacing-xs" value="4px" />

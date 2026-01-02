@@ -8,9 +8,8 @@ import {
   TokenProvider,
   TokenRoot,
   TokenValue,
-} from '@/registry/ui/token'
+} from '@/registry/components/token'
 
-// Token types with their semantic names
 const tokenTypes = {
   color: [
     'text-primary',
