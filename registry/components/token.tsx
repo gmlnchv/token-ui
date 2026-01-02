@@ -83,20 +83,8 @@ function BasicToken({ name, value, ...props }: TokenProps) {
   )
 }
 
-function ColorToken({ name, value, ...props }: TokenProps) {
-  return (
-    <Token name={name} value={value} {...props}>
-      <TokenName>
-        <TokenIndicator />
-        {name}
-      </TokenName>
-    </Token>
-  )
-}
-
 export {
   BasicToken as Token,
-  ColorToken,
   TokenProvider,
   TokenRoot,
   TokenName,

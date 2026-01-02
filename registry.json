@@ -50,7 +50,7 @@
       "registryDependencies": ["@tokenui/token"],
       "files": [
         {
-          "path": "registry/components/token.tsx",
+          "path": "registry/components/color-token.tsx",
           "type": "registry:component"
         }
       ]

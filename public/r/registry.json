@@ -46,11 +46,11 @@
       "name": "color-token",
       "type": "registry:component",
       "title": "ColorToken",
-      "description": "A specialized component for documenting color tokens with visual swatches.",
+      "description": "A specialized component for documenting color tokens.",
       "registryDependencies": ["@tokenui/token"],
       "files": [
         {
-          "path": "registry/components/token.tsx",
+          "path": "registry/components/color-token.tsx",
           "type": "registry:component"
         }
       ]
