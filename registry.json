@@ -31,27 +31,27 @@
     },
     {
       "name": "token",
-      "type": "registry:ui",
+      "type": "registry:component",
       "title": "Token",
       "description": "A tooltip-based component for documenting design tokens.",
       "registryDependencies": ["@tokenui/tooltip", "@tokenui/button"],
       "files": [
         {
-          "path": "registry/ui/token.tsx",
-          "type": "registry:ui"
+          "path": "registry/components/token.tsx",
+          "type": "registry:component"
         }
       ]
     },
     {
       "name": "color-token",
-      "type": "registry:ui",
+      "type": "registry:component",
       "title": "ColorToken",
-      "description": "A specialized component for documenting color tokens with visual swatches.",
+      "description": "A specialized component for documenting color tokens.",
       "registryDependencies": ["@tokenui/token"],
       "files": [
         {
-          "path": "registry/ui/token.tsx",
-          "type": "registry:ui"
+          "path": "registry/components/token.tsx",
+          "type": "registry:component"
         }
       ]
     }
