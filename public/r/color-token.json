@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/components/color-token.tsx",
-      "content": "'use client'\n\nimport { Token, TokenIndicator, type TokenProps } from './token'\n\nfunction ColorToken({ name, value, ...props }: TokenProps) {\n  return (\n    <Token name={name} value={value} {...props}>\n      <TokenIndicator />\n      {name}\n    </Token>\n  )\n}\n\nexport { ColorToken }\n",
+      "content": "'use client'\n\nimport { Token, TokenIndicator, TokenName, type TokenProps } from './token'\n\nfunction ColorToken({ name, value, ...props }: TokenProps) {\n  return (\n    <Token name={name} value={value} {...props}>\n      <TokenName>\n        <TokenIndicator />\n        <span>{name}</span>\n      </TokenName>\n    </Token>\n  )\n}\n\nexport { ColorToken }\n",
       "type": "registry:component"
     }
   ]

@@ -84,7 +84,9 @@ function BasicToken({ name, value, ...props }: TokenProps) {
 }
 
 export {
-  BasicToken as Token,
+  Token,
+  BasicToken,
+  BasicToken as default,
   TokenProvider,
   TokenRoot,
   TokenName,
