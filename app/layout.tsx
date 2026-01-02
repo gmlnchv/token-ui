@@ -1,6 +1,7 @@
 import { RootProvider } from 'fumadocs-ui/provider/next'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { Footer } from '@/app/components/footer'
 import './globals.css'
 
 const geistSans = Geist({
@@ -28,7 +29,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col font-sans text-foreground antialiased`}
       >
-        <RootProvider>{children}</RootProvider>
+        <RootProvider>
+          <div className="flex flex-1 flex-col">{children}</div>
+          <Footer />
+        </RootProvider>
       </body>
     </html>
   )
