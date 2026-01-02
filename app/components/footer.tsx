@@ -3,7 +3,7 @@ export function Footer() {
 
   return (
     <footer className="border-border border-t bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="p-4">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="text-muted-foreground text-sm">
             <p>&copy; {currentYear} Token UI. All rights reserved.</p>
