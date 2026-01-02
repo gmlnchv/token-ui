@@ -51,15 +51,9 @@ const TokenIndicator = () => {
   const { value } = useTokenContext()
   return (
     <div
+      className="inline-block size-4 rounded-full align-middle"
       style={{
-        width: 10,
-        height: 10,
-        borderRadius: '50%',
         backgroundColor: value,
-        marginRight: 6,
-        border: '1px solid #0000001A',
-        display: 'inline-block',
-        verticalAlign: 'middle',
       }}
     />
   )
