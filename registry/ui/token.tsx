@@ -100,4 +100,13 @@ function ColorToken({ name, value, ...props }: TokenProps) {
   )
 }
 
-export { BasicToken as Token, ColorToken, type TokenProps }
+export {
+  BasicToken as Token,
+  ColorToken,
+  TokenProvider,
+  TokenRoot,
+  TokenName,
+  TokenValue,
+  TokenIndicator,
+  type TokenProps,
+}
