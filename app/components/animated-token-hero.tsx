@@ -2,7 +2,13 @@
 
 import { useEffect, useState } from 'react'
 import { Marquee } from '@/components/ui/marquee'
-import { TokenName, TokenProvider, TokenRoot, TokenValue } from '@/registry/ui/token'
+import {
+  TokenIndicator,
+  TokenName,
+  TokenProvider,
+  TokenRoot,
+  TokenValue,
+} from '@/registry/ui/token'
 
 // Token types with their semantic names
 const tokenTypes = {
@@ -32,18 +38,7 @@ const tokenTypes = {
     'line-height-normal',
     'letter-spacing-tight',
   ],
-  spacing: [
-    'space-xs',
-    'space-sm',
-    'space-md',
-    'space-lg',
-    'space-xl',
-    'space-2xl',
-    'inset-xs',
-    'inset-sm',
-    'stack-xs',
-    'inline-md',
-  ],
+  spacing: ['space-xs', 'space-sm', 'space-md', 'space-lg', 'space-xl', 'space-2xl'],
   shadow: [
     'elevation-low',
     'elevation-medium',
@@ -51,13 +46,12 @@ const tokenTypes = {
     'shadow-sm',
     'shadow-md',
     'shadow-lg',
-    'inner-shadow',
   ],
 }
 
 // Format converters
-const formatToken = (type: string, name: string, format: 'css' | 'js' | 'sass'): string => {
-  const tokenName = `${type}-${name}`
+const formatToken = (_type: string, name: string, format: 'css' | 'js' | 'sass'): string => {
+  const tokenName = `${name}`
 
   switch (format) {
     case 'css':
@@ -74,7 +68,6 @@ const formatToken = (type: string, name: string, format: 'css' | 'js' | 'sass'):
   }
 }
 
-// Generate semantic values based on token type and name
 const generateTokenValue = (type: string, name: string): string => {
   switch (type) {
     case 'color': {
@@ -146,7 +139,6 @@ const generateTokenValue = (type: string, name: string): string => {
   }
 }
 
-// Generate all token names with different formats
 const generateTokenNames = () => {
   const tokens: Array<{ name: string; value: string; type: string }> = []
   const formats: Array<'css' | 'js' | 'sass'> = ['css', 'js', 'sass']
@@ -176,20 +168,23 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return shuffled
 }
 
-const TokenIndicator = ({ style }: { style?: React.CSSProperties }) => {
-  return (
-    <span
-      style={{
-        display: 'inline-block',
-        width: 12,
-        height: 12,
-        borderRadius: '3px',
-        verticalAlign: 'middle',
-        ...style,
-      }}
-    />
-  )
-}
+const AnimatedToken = ({
+  token,
+  keyPrefix = '',
+}: {
+  token: { name: string; value: string; type: string }
+  keyPrefix?: string
+}) => (
+  <TokenProvider key={`${keyPrefix}${token.name}`} name={token.name} value={token.value}>
+    <TokenRoot>
+      <TokenName className="border-blue-400 font-mono text-muted-foreground">
+        {token.type === 'color' && <TokenIndicator />}
+        {token.name}
+      </TokenName>
+      <TokenValue className="font-mono" />
+    </TokenRoot>
+  </TokenProvider>
+)
 
 export function AnimatedTokenHero() {
   const [tokens, setTokens] = useState<Array<{ name: string; value: string; type: string }>>([])
@@ -205,40 +200,12 @@ export function AnimatedTokenHero() {
         <>
           <Marquee pauseOnHover className="p-0 [--duration:600s] [--gap:0.5rem]">
             {tokens.map((token) => (
-              <TokenProvider key={token.name} name={token.name} value={token.value}>
-                <TokenRoot>
-                  <TokenName className="border-blue-300 text-muted-foreground">
-                    {token.type === 'color' && (
-                      <TokenIndicator
-                        style={{
-                          backgroundColor: token.value,
-                        }}
-                      />
-                    )}
-                    {token.name}
-                  </TokenName>
-                  <TokenValue className="font-mono" />
-                </TokenRoot>
-              </TokenProvider>
+              <AnimatedToken key={token.name} token={token} />
             ))}
           </Marquee>
           <Marquee reverse pauseOnHover className="p-0 [--duration:800s] [--gap:0.5rem]">
             {tokens.map((token) => (
-              <TokenProvider key={`reverse-${token.name}`} name={token.name} value={token.value}>
-                <TokenRoot>
-                  <TokenName className="border-blue-300 text-muted-foreground">
-                    {token.type === 'color' && (
-                      <TokenIndicator
-                        style={{
-                          backgroundColor: token.value,
-                        }}
-                      />
-                    )}
-                    {token.name}
-                  </TokenName>
-                  <TokenValue className="font-mono" />
-                </TokenRoot>
-              </TokenProvider>
+              <AnimatedToken key={`reverse-${token.name}`} token={token} keyPrefix="reverse-" />
             ))}
           </Marquee>
           <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
