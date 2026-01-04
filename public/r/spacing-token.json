@@ -4,11 +4,8 @@
   "type": "registry:component",
   "title": "SpacingToken",
   "description": "A token variant with a ruler icon for spacing, padding, and gap values.",
-  "dependencies": [
-    "lucide-react"
-  ],
   "registryDependencies": [
-    "@tokenui/token-indicator"
+    "@tokenui/icon-token"
   ],
   "files": [
     {

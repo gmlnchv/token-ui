@@ -87,7 +87,7 @@
       "type": "registry:component",
       "title": "ElevationToken",
       "description": "A token variant with a layers icon for elevation and shadow values.",
-      "registryDependencies": ["@tokenui/token-indicator"],
+      "registryDependencies": ["@tokenui/icon-token"],
       "dependencies": ["lucide-react"],
       "files": [
         {
@@ -101,7 +101,7 @@
       "type": "registry:component",
       "title": "DurationToken",
       "description": "A token variant with a timer icon for animation or transition durations.",
-      "registryDependencies": ["@tokenui/token-indicator"],
+      "registryDependencies": ["@tokenui/icon-token"],
       "dependencies": ["lucide-react"],
       "files": [
         {
@@ -115,8 +115,7 @@
       "type": "registry:component",
       "title": "SpacingToken",
       "description": "A token variant with a ruler icon for spacing, padding, and gap values.",
-      "registryDependencies": ["@tokenui/token-indicator"],
-      "dependencies": ["lucide-react"],
+      "registryDependencies": ["@tokenui/icon-token"],
       "files": [
         {
           "path": "registry/components/spacing-token.tsx",
@@ -129,7 +128,7 @@
       "type": "registry:component",
       "title": "TypographyToken",
       "description": "A token variant with a typography icon for font, size, and line-height values.",
-      "registryDependencies": ["@tokenui/token-indicator"],
+      "registryDependencies": ["@tokenui/icon-token"],
       "dependencies": ["lucide-react"],
       "files": [
         {
@@ -143,7 +142,7 @@
       "type": "registry:component",
       "title": "OrderToken",
       "description": "A token variant with a layers-2 icon for z-index and stacking contexts.",
-      "registryDependencies": ["@tokenui/token-indicator"],
+      "registryDependencies": ["@tokenui/icon-token"],
       "dependencies": ["lucide-react"],
       "files": [
         {
@@ -157,7 +156,7 @@
       "type": "registry:component",
       "title": "RadiusToken",
       "description": "A token variant with a spline icon for border radius values.",
-      "registryDependencies": ["@tokenui/token-indicator"],
+      "registryDependencies": ["@tokenui/icon-token"],
       "dependencies": ["lucide-react"],
       "files": [
         {
