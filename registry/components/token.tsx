@@ -23,11 +23,19 @@ type TokenProviderProps = TokenContextValue & {
   children: React.ReactNode
 }
 
+/**
+ * Context provider for token name and value.
+ * Use this primitive when building custom token compositions.
+ */
 function TokenProvider({ name, value, children }: TokenProviderProps) {
   const contextValue = React.useMemo(() => ({ name, value }), [name, value])
   return <TokenContext.Provider value={contextValue}>{children}</TokenContext.Provider>
 }
 
+/**
+ * Tooltip wrapper with default delay.
+ * Use this primitive when building custom token compositions.
+ */
 function TokenRoot({ ...props }: React.ComponentProps<typeof Tooltip>) {
   return <Tooltip delayDuration={200} {...props} />
 }
@@ -40,6 +48,11 @@ type TokenNameProps = React.ComponentProps<typeof Button> & {
   copyable?: boolean
 }
 
+/**
+ * Button trigger that displays the token name and copies it on click.
+ * Defaults to displaying the name from context if no children provided.
+ * Use this primitive when building custom token compositions.
+ */
 function TokenName({ children, onClick, copyable = true, ...props }: TokenNameProps) {
   const { name } = useTokenContext()
   const [isCopied, setIsCopied] = React.useState(false)
@@ -85,12 +98,16 @@ function TokenName({ children, onClick, copyable = true, ...props }: TokenNamePr
         aria-label={copyable && isCopied ? `Copied ${name}` : `Copy ${name}`}
         {...props}
       >
-        {copyable && isCopied ? 'Copied!' : children}
+        {copyable && isCopied ? 'Copied!' : (children ?? name)}
       </Button>
     </TooltipTrigger>
   )
 }
 
+/**
+ * Tooltip content that displays the token value from context.
+ * Use this primitive when building custom token compositions.
+ */
 function TokenValue({ ...props }: React.ComponentProps<typeof TooltipContent>) {
   const { value } = useTokenContext()
   return <TooltipContent {...props}>{value}</TooltipContent>
@@ -101,6 +118,11 @@ type TokenProps = {
   value: string
 } & React.ComponentProps<typeof Tooltip>
 
+/**
+ * Mid-level token composition.
+ * Combines TokenProvider, TokenRoot, and TokenValue.
+ * Accepts custom children as the tooltip trigger.
+ */
 function Token({ name, value, children, ...props }: TokenProps) {
   return (
     <TokenProvider name={name} value={value}>
@@ -112,10 +134,15 @@ function Token({ name, value, children, ...props }: TokenProps) {
   )
 }
 
+/**
+ * Pre-composed token component for common use cases.
+ * Displays token name as a button with copy functionality and value tooltip.
+ * This is the default export and recommended for most use cases.
+ */
 function BasicToken({ name, value, ...props }: TokenProps) {
   return (
     <Token name={name} value={value} {...props}>
-      <TokenName>{name}</TokenName>
+      <TokenName />
     </Token>
   )
 }

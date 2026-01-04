@@ -3,7 +3,8 @@ title: Token
 description: A component for displaying name/value pairs as interactive tooltips. Serves as the base primitive for specialized token variants.
 ---
 
-import { BasicToken as Token, Token as TokenComposed, TokenName } from '@/registry/components/token'
+import { BasicToken as Token, Token as TokenComposed, TokenName, TokenProvider, TokenRoot, TokenValue } from '@/registry/components/token'
+import { TooltipTrigger } from '@/registry/ui/tooltip'
 
 ## Overview
 
@@ -42,9 +43,57 @@ By default, clicking a token name copies it to the clipboard and displays "Copie
 <Preview code={`import { Token, TokenName } from '@/components/token'
 
   <Token name="brand-primary" value="#3b82f6">
-    <TokenName copyable={false}>brand-primary</TokenName>
+    <TokenName copyable={false} />
   </Token>`}>
   <TokenComposed name="brand-primary" value="#3b82f6">
-    <TokenName copyable={false}>brand-primary</TokenName>
+    <TokenName copyable={false} />
   </TokenComposed>
 </Preview>
+
+## Architecture
+
+The Token component is built from composable primitives, giving you full control over behavior and presentation. The default export `BasicToken` is a pre-composed version provided for convenience.
+
+### Component Hierarchy
+
+- **`BasicToken`** - Pre-composed convenience component (default export)
+- **`Token`** - Mid-level composition: Provider + Root + Value
+- **`TokenProvider`** - Context provider for name/value
+- **`TokenRoot`** - Tooltip wrapper with default delay
+- **`TokenName`** - Button trigger with copy functionality
+- **`TokenValue`** - Tooltip content displaying the value
+
+### Low-Level Composition
+
+Since you own the code, you can compose these primitives however you want. Here's an example of a fully custom composition:
+
+<Preview code={`import { TokenProvider, TokenRoot, TokenName, TokenValue } from '@/components/token'
+import { TooltipTrigger } from '@/components/ui/tooltip'
+
+  <TokenProvider name="custom-token" value="#002838">
+    <TokenRoot delayDuration={500}>
+      <TooltipTrigger asChild>
+        <button className="underline">
+          Brand Primary - DONT USE!
+        </button>
+      </TooltipTrigger>
+      <TokenValue />
+    </TokenRoot>
+  </TokenProvider>`}>
+  <TokenProvider name="custom-token" value="#002838">
+    <TokenRoot delayDuration={500}>
+      <TooltipTrigger asChild>
+        <button className="underline">
+          Brand Primary - DONT USE!
+        </button>
+      </TooltipTrigger>
+      <TokenValue />
+    </TokenRoot>
+  </TokenProvider>
+</Preview>
+
+This architecture lets you:
+- Add custom props that make sense for your project
+- Change the default behavior (e.g., customize tooltip delay or copy timeout)
+- Mix Token primitives with your own components
+- Build specialized variants similar to `ColorToken` or `SpacingToken`.
