@@ -1,3 +1,13 @@
 {
-  "pages": ["token", "color-token"]
+  "pages": [
+    "token",
+    "token-indicator",
+    "color-token",
+    "elevation-token",
+    "duration-token",
+    "spacing-token",
+    "typography-token",
+    "order-token",
+    "radius-token"
+  ]
 }

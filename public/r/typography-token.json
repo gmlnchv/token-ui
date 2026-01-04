@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography-token",
+  "type": "registry:component",
+  "title": "TypographyToken",
+  "description": "A token variant with a typography icon for font, size, and line-height values.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@tokenui/token",
+    "@tokenui/icon-token"
+  ],
+  "files": [
+    {
+      "path": "registry/components/typography-token.tsx",
+      "content": "'use client'\n\nimport { ALargeSmall } from 'lucide-react'\n\nimport { BaseIconToken, type BaseIconTokenProps } from './icon-token'\n\ntype TypographyTokenProps = Omit<BaseIconTokenProps, 'icon'> & {\n  icon?: BaseIconTokenProps['icon']\n}\n\nfunction TypographyToken({ icon: Icon = ALargeSmall, ...props }: TypographyTokenProps) {\n  return <BaseIconToken icon={Icon} {...props} />\n}\n\nexport { TypographyToken, type TypographyTokenProps }\n",
+      "type": "registry:component"
+    }
+  ]
+}

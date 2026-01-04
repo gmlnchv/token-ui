@@ -1,0 +1,38 @@
+---
+title: RadiusToken
+description: A token variant with a spline icon for documenting border radius values.
+---
+
+import { RadiusToken } from '@/registry/components/radius-token'
+
+## Overview
+
+**RadiusToken** pairs a spline icon with the label so corner radius values are recognizable at a glance while keeping the tooltip for the exact measurement.
+
+## Installation
+
+<Installer packageName="radius-token" />
+
+## Usage
+
+Use `RadiusToken` for border radius values:
+
+<Preview code={`import { RadiusToken } from '@/components/radius-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <RadiusToken name="radius-xs" value="2px" />
+    <RadiusToken name="radius-sm" value="4px" />
+    <RadiusToken name="radius-md" value="8px" />
+    <RadiusToken name="radius-lg" value="12px" />
+    <RadiusToken name="radius-full" value="999px" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <RadiusToken name="radius-xs" value="2px" />
+    <RadiusToken name="radius-sm" value="4px" />
+    <RadiusToken name="radius-md" value="8px" />
+    <RadiusToken name="radius-lg" value="12px" />
+    <RadiusToken name="radius-full" value="999px" />
+  </div>
+</Preview>
+
+<VariantNote />

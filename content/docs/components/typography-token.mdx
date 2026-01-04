@@ -1,0 +1,36 @@
+---
+title: TypographyToken
+description: A token variant with a typography icon for documenting fonts, sizes, and line heights.
+---
+
+import { TypographyToken } from '@/registry/components/typography-token'
+
+## Overview
+
+**TypographyToken** pairs a typography icon with the label, making font-related tokens easy to distinguish while keeping the tooltip for precise specs.
+
+## Installation
+
+<Installer packageName="typography-token" />
+
+## Usage
+
+Use `TypographyToken` for typeface, size, and line-height values:
+
+<Preview code={`import { TypographyToken } from '@/components/typography-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <TypographyToken name="body-sm" value="Inter / 14px / 20px / 400" />
+    <TypographyToken name="body-md" value="Inter / 16px / 24px / 400" />
+    <TypographyToken name="heading-sm" value="Satoshi / 20px / 28px / 600" />
+    <TypographyToken name="heading-md" value="Satoshi / 24px / 32px / 600" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <TypographyToken name="body-sm" value="Inter / 14px / 20px / 400" />
+    <TypographyToken name="body-md" value="Inter / 16px / 24px / 400" />
+    <TypographyToken name="heading-sm" value="Satoshi / 20px / 28px / 600" />
+    <TypographyToken name="heading-md" value="Satoshi / 24px / 32px / 600" />
+  </div>
+</Preview>
+
+<VariantNote />

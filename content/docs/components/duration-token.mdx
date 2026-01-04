@@ -1,0 +1,36 @@
+---
+title: DurationToken
+description: A token variant with a timer icon for documenting animation and transition durations.
+---
+
+import { DurationToken } from '@/registry/components/duration-token'
+
+## Overview
+
+**DurationToken** pairs a timer icon with the token label so motion timing values stand out while preserving the familiar tooltip for inspecting the exact duration.
+
+## Installation
+
+<Installer packageName="duration-token" />
+
+## Usage
+
+Use `DurationToken` for animation or transition durations:
+
+<Preview code={`import { DurationToken } from '@/components/duration-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <DurationToken name="duration-fast" value="150ms" />
+    <DurationToken name="duration-base" value="250ms" />
+    <DurationToken name="duration-slow" value="350ms" />
+    <DurationToken name="duration-delayed" value="500ms" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <DurationToken name="duration-fast" value="150ms" />
+    <DurationToken name="duration-base" value="250ms" />
+    <DurationToken name="duration-slow" value="350ms" />
+    <DurationToken name="duration-delayed" value="500ms" />
+  </div>
+</Preview>
+
+<VariantNote />

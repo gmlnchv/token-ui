@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radius-token",
+  "type": "registry:component",
+  "title": "RadiusToken",
+  "description": "A token variant with a spline icon for border radius values.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@tokenui/token",
+    "@tokenui/icon-token"
+  ],
+  "files": [
+    {
+      "path": "registry/components/radius-token.tsx",
+      "content": "'use client'\n\nimport { Spline } from 'lucide-react'\n\nimport { BaseIconToken, type BaseIconTokenProps } from './icon-token'\n\ntype RadiusTokenProps = Omit<BaseIconTokenProps, 'icon'> & {\n  icon?: BaseIconTokenProps['icon']\n}\n\nfunction RadiusToken({ icon: Icon = Spline, ...props }: RadiusTokenProps) {\n  return <BaseIconToken icon={Icon} {...props} />\n}\n\nexport { RadiusToken, type RadiusTokenProps }\n",
+      "type": "registry:component"
+    }
+  ]
+}

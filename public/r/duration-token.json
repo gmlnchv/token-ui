@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "duration-token",
+  "type": "registry:component",
+  "title": "DurationToken",
+  "description": "A token variant with a timer icon for animation or transition durations.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@tokenui/token",
+    "@tokenui/icon-token"
+  ],
+  "files": [
+    {
+      "path": "registry/components/duration-token.tsx",
+      "content": "'use client'\n\nimport { Timer } from 'lucide-react'\n\nimport { BaseIconToken, type BaseIconTokenProps } from './icon-token'\n\ntype DurationTokenProps = Omit<BaseIconTokenProps, 'icon'> & {\n  icon?: BaseIconTokenProps['icon']\n}\n\nfunction DurationToken({ icon: Icon = Timer, ...props }: DurationTokenProps) {\n  return <BaseIconToken icon={Icon} {...props} />\n}\n\nexport { DurationToken, type DurationTokenProps }\n",
+      "type": "registry:component"
+    }
+  ]
+}

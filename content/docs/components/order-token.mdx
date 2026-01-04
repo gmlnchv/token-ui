@@ -1,0 +1,36 @@
+---
+title: OrderToken
+description: A token variant with a layers-2 icon for documenting z-index and stacking context values.
+---
+
+import { OrderToken } from '@/registry/components/order-token'
+
+## Overview
+
+**OrderToken** adds a layered icon beside the token name to signal stacking context values while using the same tooltip to expose the exact z-index.
+
+## Installation
+
+<Installer packageName="order-token" />
+
+## Usage
+
+Use `OrderToken` for z-index or layering values:
+
+<Preview code={`import { OrderToken } from '@/components/order-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <OrderToken name="z-base" value="0" />
+    <OrderToken name="z-raised" value="10" />
+    <OrderToken name="z-floating" value="50" />
+    <OrderToken name="z-overlay" value="100" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <OrderToken name="z-base" value="0" />
+    <OrderToken name="z-raised" value="10" />
+    <OrderToken name="z-floating" value="50" />
+    <OrderToken name="z-overlay" value="100" />
+  </div>
+</Preview>
+
+<VariantNote />

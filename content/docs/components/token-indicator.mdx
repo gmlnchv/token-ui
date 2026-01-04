@@ -1,0 +1,74 @@
+---
+title: TokenIndicator
+description: A context-aware indicator for tokens that supports custom shapes, styles, and children (icons or any React nodes).
+---
+
+import { Token, TokenName } from '@/registry/components/token'
+import { TokenIndicator } from '@/registry/components/token-indicator'
+import { Sparkles } from 'lucide-react'
+
+## Overview
+
+**TokenIndicator** is the small, context-aware mark that sits next to token labels. It reads the token's value from context, applies it as a background by default, and can render any children—icons, glyphs, or extra UI—while remaining fully styleable.
+
+## Installation
+
+<Installer packageName="token-indicator" />
+
+## Usage
+
+Combine `TokenIndicator` with `TokenName` to decorate tokens. Customize shape via `className`, or render custom children while still inheriting the token value as background.
+
+<Preview code={`import { Token, TokenName } from '@/components/token'
+import { TokenIndicator } from '@/components/token-indicator'
+import { Sparkles } from 'lucide-react'
+
+  <div className="flex flex-wrap items-center gap-3">
+    <Token name="primary" value="#3B82F6">
+      <TokenName className="gap-2">
+        <TokenIndicator />
+        <span>Primary</span>
+      </TokenName>
+    </Token>
+
+    <Token name="radius-sm" value="#3B82F6">
+      <TokenName className="gap-2">
+        <TokenIndicator className="size-5 rounded-md" />
+        <span>Square</span>
+      </TokenName>
+    </Token>
+
+    <Token name="special" value="#E879F9">
+      <TokenName className="gap-2">
+        <TokenIndicator className="bg-transparent text-fuchsia-600">
+          <Sparkles className="size-3" />
+        </TokenIndicator>
+        <span>Icon child</span>
+      </TokenName>
+    </Token>
+  </div>`}>
+  <div className="flex flex-wrap items-center gap-3">
+    <Token name="primary" value="#3B82F6">
+      <TokenName className="gap-2">
+        <TokenIndicator />
+        <span>Primary</span>
+      </TokenName>
+    </Token>
+
+    <Token name="radius-sm" value="#3B82F6">
+      <TokenName className="gap-2">
+        <TokenIndicator className="size-5 rounded-md" />
+        <span>Square</span>
+      </TokenName>
+    </Token>
+
+    <Token name="special" value="#E879F9">
+      <TokenName className="gap-2">
+        <TokenIndicator className="bg-transparent text-fuchsia-600">
+          <Sparkles className="size-3" />
+        </TokenIndicator>
+        <span>Icon child</span>
+      </TokenName>
+    </Token>
+  </div>
+</Preview>

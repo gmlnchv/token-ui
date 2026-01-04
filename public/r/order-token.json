@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "order-token",
+  "type": "registry:component",
+  "title": "OrderToken",
+  "description": "A token variant with a layers-2 icon for z-index and stacking contexts.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@tokenui/token",
+    "@tokenui/icon-token"
+  ],
+  "files": [
+    {
+      "path": "registry/components/order-token.tsx",
+      "content": "'use client'\n\nimport { Layers2 } from 'lucide-react'\n\nimport { BaseIconToken, type BaseIconTokenProps } from './icon-token'\n\ntype OrderTokenProps = Omit<BaseIconTokenProps, 'icon'> & {\n  icon?: BaseIconTokenProps['icon']\n}\n\nfunction OrderToken({ icon: Icon = Layers2, ...props }: OrderTokenProps) {\n  return <BaseIconToken icon={Icon} {...props} />\n}\n\nexport { OrderToken, type OrderTokenProps }\n",
+      "type": "registry:component"
+    }
+  ]
+}

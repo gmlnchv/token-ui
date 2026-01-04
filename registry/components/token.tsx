@@ -47,18 +47,6 @@ function TokenValue({ ...props }: React.ComponentProps<typeof TooltipContent>) {
   return <TooltipContent {...props}>{value}</TooltipContent>
 }
 
-const TokenIndicator = () => {
-  const { value } = useTokenContext()
-  return (
-    <div
-      className="inline-block size-4 rounded-full align-middle"
-      style={{
-        backgroundColor: value,
-      }}
-    />
-  )
-}
-
 type TokenProps = {
   name: string
   value: string
@@ -91,6 +79,8 @@ export {
   TokenRoot,
   TokenName,
   TokenValue,
-  TokenIndicator,
+  useTokenContext,
   type TokenProps,
 }
+
+export { TokenIndicator, type TokenIndicatorProps } from './token-indicator'

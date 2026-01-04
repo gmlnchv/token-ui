@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon-token",
+  "type": "registry:component",
+  "title": "BaseIconToken",
+  "description": "A base token variant that renders an icon next to the token name; use it to build custom icon tokens.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@tokenui/token"
+  ],
+  "files": [
+    {
+      "path": "registry/components/icon-token.tsx",
+      "content": "'use client'\n\nimport type * as React from 'react'\n\nimport { Token, TokenIndicator, TokenName, type TokenProps } from './token'\n\ntype IconComponent = React.ComponentType<React.ComponentProps<'svg'>>\n\ntype BaseIconTokenProps = TokenProps & {\n  icon: IconComponent\n  iconClassName?: string\n  indicatorProps?: React.ComponentProps<typeof TokenIndicator>\n  children?: React.ReactNode\n}\n\nfunction BaseIconToken({\n  icon: Icon,\n  iconClassName = 'size-4 text-muted-foreground',\n  indicatorProps,\n  children,\n  name,\n  value,\n  ...props\n}: BaseIconTokenProps) {\n  const { className: indicatorClassName, ...restIndicatorProps } = indicatorProps ?? {}\n\n  return (\n    <Token name={name} value={value} {...props}>\n      <TokenName className=\"gap-2\">\n        <TokenIndicator className={indicatorClassName} {...restIndicatorProps}>\n          <Icon className={iconClassName} aria-hidden />\n        </TokenIndicator>\n        <span>{name}</span>\n        {children}\n      </TokenName>\n    </Token>\n  )\n}\n\nexport { BaseIconToken, type BaseIconTokenProps }\n",
+      "type": "registry:component"
+    }
+  ]
+}

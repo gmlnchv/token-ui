@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "elevation-token",
+  "type": "registry:component",
+  "title": "ElevationToken",
+  "description": "A token variant with a layers icon for elevation and shadow values.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@tokenui/token",
+    "@tokenui/icon-token"
+  ],
+  "files": [
+    {
+      "path": "registry/components/elevation-token.tsx",
+      "content": "'use client'\n\nimport { Layers } from 'lucide-react'\n\nimport { BaseIconToken, type BaseIconTokenProps } from './icon-token'\n\ntype ElevationTokenProps = Omit<BaseIconTokenProps, 'icon'> & {\n  icon?: BaseIconTokenProps['icon']\n}\n\nfunction ElevationToken({ icon: Icon = Layers, ...props }: ElevationTokenProps) {\n  return <BaseIconToken icon={Icon} {...props} />\n}\n\nexport { ElevationToken, type ElevationTokenProps }\n",
+      "type": "registry:component"
+    }
+  ]
+}

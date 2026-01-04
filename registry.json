@@ -43,6 +43,19 @@
       ]
     },
     {
+      "name": "token-indicator",
+      "type": "registry:component",
+      "title": "TokenIndicator",
+      "description": "A small indicator that reads token context, supports custom shapes and children.",
+      "registryDependencies": ["@tokenui/token"],
+      "files": [
+        {
+          "path": "registry/components/token-indicator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "color-token",
       "type": "registry:component",
       "title": "ColorToken",
@@ -51,6 +64,104 @@
       "files": [
         {
           "path": "registry/components/color-token.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "icon-token",
+      "type": "registry:component",
+      "title": "BaseIconToken",
+      "description": "A base token variant that renders an icon next to the token name; use it to build custom icon tokens.",
+      "registryDependencies": ["@tokenui/token"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/components/icon-token.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "elevation-token",
+      "type": "registry:component",
+      "title": "ElevationToken",
+      "description": "A token variant with a layers icon for elevation and shadow values.",
+      "registryDependencies": ["@tokenui/token", "@tokenui/icon-token"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/components/elevation-token.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "duration-token",
+      "type": "registry:component",
+      "title": "DurationToken",
+      "description": "A token variant with a timer icon for animation or transition durations.",
+      "registryDependencies": ["@tokenui/token", "@tokenui/icon-token"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/components/duration-token.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "spacing-token",
+      "type": "registry:component",
+      "title": "SpacingToken",
+      "description": "A token variant with a ruler icon for spacing, padding, and gap values.",
+      "registryDependencies": ["@tokenui/token", "@tokenui/icon-token"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/components/spacing-token.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "typography-token",
+      "type": "registry:component",
+      "title": "TypographyToken",
+      "description": "A token variant with a typography icon for font, size, and line-height values.",
+      "registryDependencies": ["@tokenui/token", "@tokenui/icon-token"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/components/typography-token.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "order-token",
+      "type": "registry:component",
+      "title": "OrderToken",
+      "description": "A token variant with a layers-2 icon for z-index and stacking contexts.",
+      "registryDependencies": ["@tokenui/token", "@tokenui/icon-token"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/components/order-token.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "radius-token",
+      "type": "registry:component",
+      "title": "RadiusToken",
+      "description": "A token variant with a spline icon for border radius values.",
+      "registryDependencies": ["@tokenui/token", "@tokenui/icon-token"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/components/radius-token.tsx",
           "type": "registry:component"
         }
       ]

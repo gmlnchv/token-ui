@@ -1,0 +1,36 @@
+---
+title: ElevationToken
+description: A token variant with a layers icon for documenting elevation and shadow values.
+---
+
+import { ElevationToken } from '@/registry/components/elevation-token'
+
+## Overview
+
+**ElevationToken** adds a layers icon next to the token name so elevation and shadow values are easy to spot while keeping the same tooltip interaction for inspecting values.
+
+## Installation
+
+<Installer packageName="elevation-token" />
+
+## Usage
+
+Use `ElevationToken` for shadow or depth values:
+
+<Preview code={`import { ElevationToken } from '@/components/elevation-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <ElevationToken name="shadow-xs" value="0px 1px 2px rgba(0, 0, 0, 0.12)" />
+    <ElevationToken name="shadow-sm" value="0px 2px 8px rgba(15, 23, 42, 0.14)" />
+    <ElevationToken name="shadow-md" value="0px 6px 16px rgba(15, 23, 42, 0.18)" />
+    <ElevationToken name="shadow-lg" value="0px 12px 32px rgba(15, 23, 42, 0.24)" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <ElevationToken name="shadow-xs" value="0px 1px 2px rgba(0, 0, 0, 0.12)" />
+    <ElevationToken name="shadow-sm" value="0px 2px 8px rgba(15, 23, 42, 0.14)" />
+    <ElevationToken name="shadow-md" value="0px 6px 16px rgba(15, 23, 42, 0.18)" />
+    <ElevationToken name="shadow-lg" value="0px 12px 32px rgba(15, 23, 42, 0.24)" />
+  </div>
+</Preview>
+
+<VariantNote />

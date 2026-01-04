@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "token-indicator",
+  "type": "registry:component",
+  "title": "TokenIndicator",
+  "description": "A small indicator that reads token context, supports custom shapes and children.",
+  "registryDependencies": [
+    "@tokenui/token"
+  ],
+  "files": [
+    {
+      "path": "registry/components/token-indicator.tsx",
+      "content": "'use client'\n\nimport type * as React from 'react'\n\nimport { cn } from '@/lib/utils'\nimport { useTokenContext } from './token'\n\ntype TokenIndicatorProps = React.HTMLAttributes<HTMLSpanElement> & {\n  children?: React.ReactNode\n}\n\nfunction TokenIndicator({ className, style, children, ...props }: TokenIndicatorProps) {\n  const { value } = useTokenContext()\n\n  return (\n    <span\n      aria-hidden\n      className={cn(\n        'inline-flex size-4 items-center justify-center rounded-full align-middle',\n        className,\n      )}\n      style={{ backgroundColor: value, ...style }}\n      {...props}\n    >\n      {children}\n    </span>\n  )\n}\n\nexport { TokenIndicator, type TokenIndicatorProps }\n",
+      "type": "registry:component"
+    }
+  ]
+}

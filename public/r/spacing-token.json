@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spacing-token",
+  "type": "registry:component",
+  "title": "SpacingToken",
+  "description": "A token variant with a ruler icon for spacing, padding, and gap values.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@tokenui/token",
+    "@tokenui/icon-token"
+  ],
+  "files": [
+    {
+      "path": "registry/components/spacing-token.tsx",
+      "content": "'use client'\n\nimport { Ruler } from 'lucide-react'\n\nimport { BaseIconToken, type BaseIconTokenProps } from './icon-token'\n\ntype SpacingTokenProps = Omit<BaseIconTokenProps, 'icon'> & {\n  icon?: BaseIconTokenProps['icon']\n}\n\nfunction SpacingToken({ icon: Icon = Ruler, ...props }: SpacingTokenProps) {\n  return <BaseIconToken icon={Icon} {...props} />\n}\n\nexport { SpacingToken, type SpacingTokenProps }\n",
+      "type": "registry:component"
+    }
+  ]
+}

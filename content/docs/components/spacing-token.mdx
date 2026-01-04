@@ -1,0 +1,38 @@
+---
+title: SpacingToken
+description: A token variant with a ruler icon for documenting spacing, padding, and gap values.
+---
+
+import { SpacingToken } from '@/registry/components/spacing-token'
+
+## Overview
+
+**SpacingToken** adds a ruler icon next to the token label so spacing-related values are easy to scan while using the same tooltip pattern to reveal the exact measurement.
+
+## Installation
+
+<Installer packageName="spacing-token" />
+
+## Usage
+
+Use `SpacingToken` for spacing, padding, or gap values:
+
+<Preview code={`import { SpacingToken } from '@/components/spacing-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <SpacingToken name="space-2" value="8px" />
+    <SpacingToken name="space-3" value="12px" />
+    <SpacingToken name="space-4" value="16px" />
+    <SpacingToken name="space-6" value="24px" />
+    <SpacingToken name="space-8" value="32px" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <SpacingToken name="space-2" value="8px" />
+    <SpacingToken name="space-3" value="12px" />
+    <SpacingToken name="space-4" value="16px" />
+    <SpacingToken name="space-6" value="24px" />
+    <SpacingToken name="space-8" value="32px" />
+  </div>
+</Preview>
+
+<VariantNote />
