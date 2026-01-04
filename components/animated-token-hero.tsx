@@ -2,13 +2,9 @@
 
 import { useEffect, useState } from 'react'
 import { Marquee } from '@/components/ui/marquee'
-import {
-  TokenIndicator,
-  TokenName,
-  TokenProvider,
-  TokenRoot,
-  TokenValue,
-} from '@/registry/components/token'
+import { TokenName, TokenProvider, TokenRoot, TokenValue } from '@/registry/components/token'
+
+import { TokenIndicator } from '@/registry/components/token-indicator'
 
 const tokenTypes = {
   color: [
