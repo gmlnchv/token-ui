@@ -3,7 +3,7 @@ title: Token
 description: A component for displaying name/value pairs as interactive tooltips. Serves as the base primitive for specialized token variants.
 ---
 
-import { BasicToken as Token } from '@/registry/components/token'
+import { BasicToken as Token, Token as TokenComposed, TokenName } from '@/registry/components/token'
 
 ## Overview
 
@@ -15,7 +15,7 @@ import { BasicToken as Token } from '@/registry/components/token'
 
 ## Usage
 
-Use the `Token` component to document any design token. The token name appears as a button, and hovering reveals the value:
+Use the `Token` component to document any design token. The token name appears as a button, and hovering reveals the value. Clicking the token name copies it to the clipboard:
 
 <Preview code={`import { BasicToken as Token } from '@/components/token'
 
@@ -33,4 +33,18 @@ Use the `Token` component to document any design token. The token name appears a
     <Token name="spacing-lg" value="24px" />
     <Token name="spacing-xl" value="32px" />
   </div>
+</Preview>
+
+## Copy to Clipboard
+
+By default, clicking a token name copies it to the clipboard and displays "Copied" for 2 seconds. You can disable this behavior by setting `copyable={false}`:
+
+<Preview code={`import { Token, TokenName } from '@/components/token'
+
+  <Token name="brand-primary" value="#3b82f6">
+    <TokenName copyable={false}>brand-primary</TokenName>
+  </Token>`}>
+  <TokenComposed name="brand-primary" value="#3b82f6">
+    <TokenName copyable={false}>brand-primary</TokenName>
+  </TokenComposed>
 </Preview>

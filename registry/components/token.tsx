@@ -32,11 +32,60 @@ function TokenRoot({ ...props }: React.ComponentProps<typeof Tooltip>) {
   return <Tooltip delayDuration={200} {...props} />
 }
 
-function TokenName({ children, ...props }: React.ComponentProps<typeof Button>) {
+type TokenNameProps = React.ComponentProps<typeof Button> & {
+  /**
+   * Whether clicking the token name should copy it to the clipboard.
+   * @default true
+   */
+  copyable?: boolean
+}
+
+function TokenName({ children, onClick, copyable = true, ...props }: TokenNameProps) {
+  const { name } = useTokenContext()
+  const [isCopied, setIsCopied] = React.useState(false)
+  const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  React.useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
+
+  const handleClick = React.useCallback(
+    async (event: React.MouseEvent<HTMLButtonElement>) => {
+      onClick?.(event)
+
+      if (!copyable) {
+        return
+      }
+
+      if (typeof navigator === 'undefined' || !navigator.clipboard?.writeText) {
+        return
+      }
+
+      try {
+        await navigator.clipboard.writeText(name)
+        setIsCopied(true)
+
+        timeoutRef.current = setTimeout(() => setIsCopied(false), 2000)
+      } catch (_error) {
+        // Silently fail
+      }
+    },
+    [name, onClick, copyable],
+  )
+
   return (
     <TooltipTrigger asChild>
-      <Button variant="outline" {...props}>
-        {children}
+      <Button
+        variant="outline"
+        onClick={handleClick}
+        aria-label={copyable && isCopied ? `Copied ${name}` : `Copy ${name}`}
+        {...props}
+      >
+        {copyable && isCopied ? 'Copied!' : children}
       </Button>
     </TooltipTrigger>
   )
