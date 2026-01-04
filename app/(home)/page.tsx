@@ -18,8 +18,8 @@ export default function Home() {
             system.
           </p>
 
-          <Button asChild>
-            <Link href="/docs/overview/introduction">Get Started</Link>
+          <Button size="lg" asChild>
+            <Link href="/docs/components/token">View Components</Link>
           </Button>
         </div>
       </main>
