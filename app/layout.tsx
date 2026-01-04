@@ -1,7 +1,7 @@
 import { RootProvider } from 'fumadocs-ui/provider/next'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { Footer } from '@/app/components/footer'
+import { Footer } from '@/components/footer'
 import './globals.css'
 
 const geistSans = Geist({

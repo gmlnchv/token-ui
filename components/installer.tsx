@@ -1,4 +1,4 @@
-import { CopyButton } from '@/components/ui/copy-button'
+import { CopyButton } from '@/components/copy-button'
 
 export function Installer({ packageName }: { packageName: string }) {
   const command = `npx shadcn add @tokenui/${packageName}`

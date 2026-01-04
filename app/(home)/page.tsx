@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { AnimatedTokenHero } from '@/app/components/animated-token-hero'
+import { AnimatedTokenHero } from '@/components/animated-token-hero'
 import { Button } from '@/registry/ui/button'
 
 export default function Home() {
