@@ -2,7 +2,8 @@
 
 import type * as React from 'react'
 
-import { Token, TokenIndicator, TokenName, type TokenProps } from './token'
+import { Token, TokenName, type TokenProps } from './token'
+import { TokenIndicator } from './token-indicator'
 
 type IconComponent = React.ComponentType<React.ComponentProps<'svg'>>
 

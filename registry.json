@@ -56,28 +56,28 @@
       ]
     },
     {
-      "name": "color-token",
+      "name": "icon-token",
       "type": "registry:component",
-      "title": "ColorToken",
-      "description": "A specialized component for documenting color tokens.",
-      "registryDependencies": ["@tokenui/token"],
+      "title": "BaseIconToken",
+      "description": "A base token variant that renders an icon next to the token name; use it to build custom icon tokens.",
+      "registryDependencies": ["@tokenui/token", "@tokenui/token-indicator"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
-          "path": "registry/components/color-token.tsx",
+          "path": "registry/components/icon-token.tsx",
           "type": "registry:component"
         }
       ]
     },
     {
-      "name": "icon-token",
+      "name": "color-token",
       "type": "registry:component",
-      "title": "BaseIconToken",
-      "description": "A base token variant that renders an icon next to the token name; use it to build custom icon tokens.",
-      "registryDependencies": ["@tokenui/token"],
-      "dependencies": ["lucide-react"],
+      "title": "ColorToken",
+      "description": "A specialized component for documenting color tokens.",
+      "registryDependencies": ["@tokenui/token", "@tokenui/token-indicator"],
       "files": [
         {
-          "path": "registry/components/icon-token.tsx",
+          "path": "registry/components/color-token.tsx",
           "type": "registry:component"
         }
       ]

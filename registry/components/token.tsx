@@ -82,5 +82,3 @@ export {
   useTokenContext,
   type TokenProps,
 }
-
-export { TokenIndicator, type TokenIndicatorProps } from './token-indicator'
