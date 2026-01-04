@@ -194,7 +194,7 @@ export function AnimatedTokenHero() {
   }, [])
 
   return (
-    <div className="relative flex h-96 w-full flex-col items-center justify-center gap-y-2 overflow-hidden border-border border-b bg-muted/20">
+    <div className="relative flex h-96 w-full flex-col items-center justify-center gap-y-2 overflow-hidden border-border border-b bg-muted/40">
       {tokens.length > 0 && (
         <>
           <Marquee pauseOnHover className="p-0 [--duration:600s] [--gap:0.5rem]">
