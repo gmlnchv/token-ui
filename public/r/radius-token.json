@@ -8,7 +8,6 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@tokenui/icon-token",
     "@tokenui/token-indicator"
   ],
   "files": [

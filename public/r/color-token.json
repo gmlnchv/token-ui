@@ -5,7 +5,6 @@
   "title": "ColorToken",
   "description": "A specialized component for documenting color tokens.",
   "registryDependencies": [
-    "@tokenui/token",
     "@tokenui/token-indicator"
   ],
   "files": [
