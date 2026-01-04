@@ -139,10 +139,10 @@ function Token({ name, value, children, ...props }: TokenProps) {
  * Displays token name as a button with copy functionality and value tooltip.
  * This is the default export and recommended for most use cases.
  */
-function BasicToken({ name, value, ...props }: TokenProps) {
+function BasicToken({ name, value, copyable, ...props }: TokenProps & { copyable?: boolean }) {
   return (
     <Token name={name} value={value} {...props}>
-      <TokenName />
+      <TokenName copyable={copyable} />
     </Token>
   )
 }
