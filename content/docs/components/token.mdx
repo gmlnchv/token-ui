@@ -51,7 +51,7 @@ By default, clicking a token name copies it to the clipboard and displays "Copie
 
 The Token component provides **three levels of abstraction**, letting you choose the right balance between convenience and control:
 
-### 1. BasicToken (High-Level)
+### `BasicToken`
 
 The simplest approach. Perfect for most use cases. This is the default export.
 
@@ -67,7 +67,7 @@ The simplest approach. Perfect for most use cases. This is the default export.
   </div>
 </Preview>
 
-### 2. Token + Custom Children (Mid-Level)
+### `Token` + Custom Children
 
 Use when you need custom trigger content but want the standard tooltip behavior. Great for adding icons, indicators, or custom layouts.
 
@@ -88,7 +88,7 @@ import { AlertTriangle } from 'lucide-react'
   </TokenComposed>
 </Preview>
 
-### 3. Primitives (Low-Level)
+### Low-Level Primitives
 
 Full control for advanced use cases. Compose primitives directly when you need completely custom behavior, different tooltip settings, or non-standard interactions.
 
