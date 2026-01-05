@@ -1,18 +1,18 @@
 # Token UI Registry
 
-> **Inspired by W3C Standards** — Aligned with the [Design Tokens Format Module 2025.10](https://www.designtokens.org/tr/2025.10/format/)
+> **Inspired by W3C Standards** — Strives to align with the [W3C Design Tokens Community Group specification](https://www.designtokens.org/tr/2025.10/format/) (2025.10)
 
 A component library for documenting design tokens with beautiful, interactive visualizations that follow industry standards.
 
 ## Features
 
-- ✅ **Standards-Inspired** — Aligns with W3C Design Tokens specification
-- 🎨 **All Token Types** — Core & composite types (color, typography, shadow, etc.)
+- ✅ **Standards-Inspired** — Aligns with W3C Design Tokens Community Group specification
+- 🎨 **Core & Composite Types** — Implements core token types and select composite types
 - 🔧 **Extensible** — Built on shadcn/ui, fully customizable
-- 🎯 **Type-Safe** — Full TypeScript support
-- 📦 **Framework-Agnostic** — Works with any design token setup
+- 🎯 **Type-Safe** — TypeScript-first with full type inference
+- 📦 **Framework-Agnostic** — Works with any React-based documentation setup
 
-## Spec Coverage
+## DTCG Specification Coverage
 
 | Spec Type | Token Component | Status |
 |-----------|-----------------|--------|
@@ -33,17 +33,6 @@ This registry is built using Next.js and the shadcn registry system:
 - The `shadcn build` command builds the registry
 - Registry items are served as static files under `public/r/[name].json`
 - All items are compatible with the `shadcn` CLI
-- Includes v0 integration via the `Open in v0` API
-
-## Interoperability
-
-Works with industry-standard design token tools:
-
-- **[Style Dictionary](https://amzn.github.io/style-dictionary/)** — Transform to CSS, SCSS, JS, iOS, Android, etc.
-- **[Figma Tokens Studio](https://tokens.studio/)** — Sync tokens with Figma
-- **[Terrazzo](https://terrazzoapp.com/)** — Type-safe token transformations
-- Any DTCG-compliant tool
-
 ## Documentation
 
 Visit [tokenui.dev](https://tokenui.dev) for full documentation and live examples.
