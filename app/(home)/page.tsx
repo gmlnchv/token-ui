@@ -13,8 +13,8 @@ export default function Home() {
           </h1>
 
           <p className="mx-auto max-w-lg text-balance text-center text-base text-muted-foreground tracking-tight md:text-lg">
-            Beautiful, interactive documentation for your design tokens following industry
-            standards.
+            Beautiful, interactive documentation components for your design tokens following
+            industry standards.
           </p>
 
           <CTAButton href="/docs/components/token">View Components</CTAButton>
