@@ -4,9 +4,7 @@
   "type": "registry:component",
   "title": "ColorToken",
   "description": "A specialized component for documenting color tokens.",
-  "registryDependencies": [
-    "@tokenui/token-indicator"
-  ],
+  "registryDependencies": ["@tokenui/token-indicator"],
   "files": [
     {
       "path": "registry/components/color-token.tsx",

@@ -4,12 +4,8 @@
   "type": "registry:component",
   "title": "BaseIconToken",
   "description": "A base token variant that renders an icon next to the token name; use it to build custom icon tokens.",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@tokenui/token-indicator"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@tokenui/token-indicator"],
   "files": [
     {
       "path": "registry/components/icon-token.tsx",

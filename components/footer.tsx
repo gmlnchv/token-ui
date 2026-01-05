@@ -1,5 +1,17 @@
+'use client'
+
+import posthog from 'posthog-js'
+
 export function Footer() {
   const currentYear = new Date().getFullYear()
+
+  const handleGitHubClick = () => {
+    // PostHog: Track when users click the GitHub link
+    posthog.capture('github_link_clicked', {
+      link_location: 'footer',
+      destination_url: 'https://github.com/gmlnchv/token-ui',
+    })
+  }
 
   return (
     <footer className="border-border border-t bg-background">
@@ -14,6 +26,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground text-sm transition-colors hover:text-foreground"
+              onClick={handleGitHubClick}
             >
               GitHub
             </a>

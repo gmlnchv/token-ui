@@ -1,6 +1,7 @@
 'use client'
 
 import { CodeIcon, EyeIcon } from 'lucide-react'
+import posthog from 'posthog-js'
 import type { ReactNode } from 'react'
 import { useEffect, useState } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -18,9 +19,17 @@ export function Preview({ children, code }: PreviewProps) {
     highlightCode(code, 'tsx').then(setHighlightedCode)
   }, [code])
 
+  const handleTabChange = (tab: string) => {
+    // PostHog: Track when users switch between code and preview tabs
+    posthog.capture('preview_tab_changed', {
+      tab_selected: tab,
+      code_length: code.length,
+    })
+  }
+
   return (
     <div className="not-prose my-6 overflow-hidden rounded-lg border bg-background">
-      <Tabs defaultValue="preview" className="gap-0">
+      <Tabs defaultValue="preview" className="gap-0" onValueChange={handleTabChange}>
         <TabsList className="w-full rounded-none border-b">
           <TabsTrigger value="code">
             <CodeIcon className="text-muted-foreground" size={16} />

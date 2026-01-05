@@ -1,6 +1,5 @@
-import Link from 'next/link'
 import { AnimatedTokenHero } from '@/components/animated-token-hero'
-import { Button } from '@/registry/ui/button'
+import { CTAButton } from '@/components/cta-button'
 
 export default function Home() {
   return (
@@ -18,9 +17,7 @@ export default function Home() {
             system.
           </p>
 
-          <Button size="lg" asChild>
-            <Link href="/docs/components/token">View Components</Link>
-          </Button>
+          <CTAButton href="/docs/components/token">View Components</CTAButton>
         </div>
       </main>
     </>

@@ -4,12 +4,8 @@
   "type": "registry:component",
   "title": "OrderToken",
   "description": "A token variant with a layers-2 icon for z-index and stacking contexts.",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@tokenui/icon-token"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@tokenui/icon-token"],
   "files": [
     {
       "path": "registry/components/order-token.tsx",
