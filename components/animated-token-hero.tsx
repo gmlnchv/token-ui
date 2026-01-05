@@ -438,12 +438,12 @@ export function AnimatedTokenHero() {
     <div className="relative flex h-96 w-full flex-col items-center justify-center gap-y-2 overflow-hidden border-border border-b bg-muted/40">
       {tokens.length > 0 && (
         <>
-          <Marquee pauseOnHover className="p-0 [--duration:600s] [--gap:0.5rem]">
+          <Marquee pauseOnHover className="p-0 [--duration:1000s] [--gap:0.5rem]">
             {tokens.map((token) => (
               <AnimatedToken key={token.name} token={token} />
             ))}
           </Marquee>
-          <Marquee reverse pauseOnHover className="p-0 [--duration:800s] [--gap:0.5rem]">
+          <Marquee reverse pauseOnHover className="p-0 [--duration:1000s] [--gap:0.5rem]">
             {tokens.map((token) => (
               <AnimatedToken key={`reverse-${token.name}`} token={token} keyPrefix="reverse-" />
             ))}
