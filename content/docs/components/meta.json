@@ -8,6 +8,9 @@
     "spacing-token",
     "typography-token",
     "order-token",
-    "radius-token"
+    "radius-token",
+    "font-family-token",
+    "font-weight-token",
+    "number-token"
   ]
 }

@@ -4,8 +4,12 @@
   "type": "registry:component",
   "title": "TypographyToken",
   "description": "A token variant with a typography icon for font, size, and line-height values.",
-  "dependencies": ["lucide-react"],
-  "registryDependencies": ["@tokenui/icon-token"],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@tokenui/icon-token"
+  ],
   "files": [
     {
       "path": "registry/components/typography-token.tsx",

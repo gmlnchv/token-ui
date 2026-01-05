@@ -1,0 +1,80 @@
+---
+title: FontFamilyToken
+description: A token variant with a type icon for documenting font family values.
+---
+
+import { FontFamilyToken } from '@/registry/components/font-family-token'
+
+## Overview
+
+**FontFamilyToken** is a specialized variant of the Token component that adds a visual icon to help distinguish font family values while keeping the tooltip for the exact font stack.
+
+This component implements the `fontFamily` type from the [W3C Design Tokens specification](https://www.designtokens.org/tr/2025.10/format/#font-family) (§8.3), which represents font names or font stacks.
+
+## Installation
+
+<Installer packageName="font-family-token" />
+
+## Usage
+
+Use `FontFamilyToken` for font family and font stack values:
+
+<Preview code={`import { FontFamilyToken } from '@/components/font-family-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <FontFamilyToken name="font-sans" value="Inter, system-ui, sans-serif" />
+    <FontFamilyToken name="font-serif" value="Georgia, serif" />
+    <FontFamilyToken name="font-mono" value="'Fira Code', Consolas, monospace" />
+    <FontFamilyToken name="font-display" value="'Cal Sans', Inter, sans-serif" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <FontFamilyToken name="font-sans" value="Inter, system-ui, sans-serif" />
+    <FontFamilyToken name="font-serif" value="Georgia, serif" />
+    <FontFamilyToken name="font-mono" value="'Fira Code', Consolas, monospace" />
+    <FontFamilyToken name="font-display" value="'Cal Sans', Inter, sans-serif" />
+  </div>
+</Preview>
+
+<VariantNote />
+
+## Spec Compliance
+
+The W3C Design Tokens specification defines `fontFamily` as either:
+- A single font name: `"Comic Sans MS"`
+- An array of font names (fallback stack): `["Helvetica", "Arial", "sans-serif"]`
+
+FontFamilyToken accepts comma-separated font stacks as strings for convenience in documentation.
+
+## Examples
+
+### System Font Stacks
+
+<Preview code={`import { FontFamilyToken } from '@/components/font-family-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <FontFamilyToken 
+      name="font-system" 
+      value="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+    />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <FontFamilyToken 
+      name="font-system" 
+      value="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+    />
+  </div>
+</Preview>
+
+### Custom Web Fonts
+
+<Preview code={`import { FontFamilyToken } from '@/components/font-family-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <FontFamilyToken name="font-heading" value="'Plus Jakarta Sans', sans-serif" />
+    <FontFamilyToken name="font-body" value="'Inter Variable', sans-serif" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <FontFamilyToken name="font-heading" value="'Plus Jakarta Sans', sans-serif" />
+    <FontFamilyToken name="font-body" value="'Inter Variable', sans-serif" />
+  </div>
+</Preview>

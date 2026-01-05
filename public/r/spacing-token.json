@@ -4,7 +4,9 @@
   "type": "registry:component",
   "title": "SpacingToken",
   "description": "A token variant with a ruler icon for spacing, padding, and gap values.",
-  "registryDependencies": ["@tokenui/icon-token"],
+  "registryDependencies": [
+    "@tokenui/icon-token"
+  ],
   "files": [
     {
       "path": "registry/components/spacing-token.tsx",

@@ -12,3 +12,32 @@ Token UI builds on the **shadcn/ui** ecosystem. Components are created on top of
 Because the components are written in React, Token UI can be used wherever React-based documentation is supported. This includes custom documentation sites, documentation frameworks like [Fumadocs](https://www.fumadocs.dev/) and [Nextra](https://nextra.site/), as well as MDX-based environments such as [Storybook](https://storybook.js.org/docs/writing-docs/mdx/).
 
 Like **shadcn/ui**, Token UI provides the actual component code rather than a compiled package. This means the components are fully owned by your project and can be customized as needed. The examples shown in the documentation use an opinionated setup inspired by common design system patterns, but layouts, styling, and composition can be adjusted to suit different design languages and documentation needs.
+
+## Inspired by W3C Standards
+
+Token UI is inspired by and strives to align with the [W3C Design Tokens Community Group specification](https://www.designtokens.org/tr/2025.10/format/) (2025.10). Following these standards helps ensure better compatibility with industry-standard design token tools and workflows, adding credibility to your design system.
+
+### Spec-Aligned Token Types
+
+We support all core token types defined in the DTCG specification:
+
+- **Core Types** ([§8](https://www.designtokens.org/tr/2025.10/format/#types)): `color`, `dimension`, `fontFamily`, `fontWeight`, `duration`, `cubicBezier`, `number`
+- **Composite Types** ([§9](https://www.designtokens.org/tr/2025.10/format/#composite-types)): `typography`, `shadow`, `border`, `transition`, `gradient`, `strokeStyle`
+
+### Extensions & Innovations
+
+Token UI extends the specification with practical patterns:
+
+- **OrderToken** — For z-index and stacking contexts (not yet standardized)
+- **Visual Documentation** — Interactive tooltips and indicators for better developer experience
+- **Type Safety** — TypeScript-first design with full type inference
+
+### Interoperability
+
+Your tokens work with spec-compliant tools:
+- ✅ [Style Dictionary](https://amzn.github.io/style-dictionary/)
+- ✅ [Terrazzo](https://terrazzoapp.com/)
+- ✅ [Figma Tokens Studio](https://tokens.studio/)
+- ✅ Any tool following the [Design Tokens Format Module](https://www.designtokens.org/tr/2025.10/format/)
+
+Learn more in our [DTCG Specification](/docs/overview/spec-compliance) guide.

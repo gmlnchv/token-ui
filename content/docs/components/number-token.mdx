@@ -1,0 +1,137 @@
+---
+title: NumberToken
+description: A token variant with a hash icon for documenting numeric values like line-height and opacity.
+---
+
+import { NumberToken } from '@/registry/components/number-token'
+
+## Overview
+
+**NumberToken** is a specialized variant of the Token component that adds a visual icon to help distinguish numeric values while keeping the tooltip for the exact number.
+
+This component implements the `number` type from the [W3C Design Tokens specification](https://www.designtokens.org/tr/2025.10/format/#number) (§8.7), which represents unitless numeric values like line-height multipliers, opacity, or gradient stop positions.
+
+## Installation
+
+<Installer packageName="number-token" />
+
+## Usage
+
+Use `NumberToken` for unitless numeric values:
+
+<Preview code={`import { NumberToken } from '@/components/number-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <NumberToken name="lineHeight-tight" value="1.2" />
+    <NumberToken name="lineHeight-normal" value="1.5" />
+    <NumberToken name="lineHeight-loose" value="1.8" />
+    <NumberToken name="lineHeight-relaxed" value="2" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <NumberToken name="lineHeight-tight" value="1.2" />
+    <NumberToken name="lineHeight-normal" value="1.5" />
+    <NumberToken name="lineHeight-loose" value="1.8" />
+    <NumberToken name="lineHeight-relaxed" value="2" />
+  </div>
+</Preview>
+
+<VariantNote />
+
+## Spec Compliance
+
+The W3C Design Tokens specification defines `number` as:
+- Positive, negative, or fractional numbers
+- Unitless values (no `px`, `rem`, `%`, etc.)
+- Used for ratios, multipliers, and positions
+
+## Examples
+
+### Line Height
+
+Line height is commonly expressed as a unitless multiplier:
+
+<Preview code={`import { NumberToken } from '@/components/number-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <NumberToken name="lh-none" value="1" />
+    <NumberToken name="lh-tight" value="1.25" />
+    <NumberToken name="lh-snug" value="1.375" />
+    <NumberToken name="lh-normal" value="1.5" />
+    <NumberToken name="lh-relaxed" value="1.625" />
+    <NumberToken name="lh-loose" value="2" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <NumberToken name="lh-none" value="1" />
+    <NumberToken name="lh-tight" value="1.25" />
+    <NumberToken name="lh-snug" value="1.375" />
+    <NumberToken name="lh-normal" value="1.5" />
+    <NumberToken name="lh-relaxed" value="1.625" />
+    <NumberToken name="lh-loose" value="2" />
+  </div>
+</Preview>
+
+### Opacity
+
+Opacity values are numbers between 0 and 1:
+
+<Preview code={`import { NumberToken } from '@/components/number-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <NumberToken name="opacity-0" value="0" />
+    <NumberToken name="opacity-25" value="0.25" />
+    <NumberToken name="opacity-50" value="0.5" />
+    <NumberToken name="opacity-75" value="0.75" />
+    <NumberToken name="opacity-100" value="1" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <NumberToken name="opacity-0" value="0" />
+    <NumberToken name="opacity-25" value="0.25" />
+    <NumberToken name="opacity-50" value="0.5" />
+    <NumberToken name="opacity-75" value="0.75" />
+    <NumberToken name="opacity-100" value="1" />
+  </div>
+</Preview>
+
+### Scale Multipliers
+
+Numbers can represent scale factors:
+
+<Preview code={`import { NumberToken } from '@/components/number-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <NumberToken name="scale-sm" value="0.75" />
+    <NumberToken name="scale-md" value="1" />
+    <NumberToken name="scale-lg" value="1.25" />
+    <NumberToken name="scale-xl" value="1.5" />
+    <NumberToken name="scale-2xl" value="2" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <NumberToken name="scale-sm" value="0.75" />
+    <NumberToken name="scale-md" value="1" />
+    <NumberToken name="scale-lg" value="1.25" />
+    <NumberToken name="scale-xl" value="1.5" />
+    <NumberToken name="scale-2xl" value="2" />
+  </div>
+</Preview>
+
+### Gradient Positions
+
+Numbers from 0-1 represent positions along a gradient axis:
+
+<Preview code={`import { NumberToken } from '@/components/number-token'
+
+  <div className="flex gap-2 flex-wrap">
+    <NumberToken name="stop-start" value="0" />
+    <NumberToken name="stop-quarter" value="0.25" />
+    <NumberToken name="stop-half" value="0.5" />
+    <NumberToken name="stop-three-quarters" value="0.75" />
+    <NumberToken name="stop-end" value="1" />
+  </div>`}>
+  <div className="flex gap-2 flex-wrap">
+    <NumberToken name="stop-start" value="0" />
+    <NumberToken name="stop-quarter" value="0.25" />
+    <NumberToken name="stop-half" value="0.5" />
+    <NumberToken name="stop-three-quarters" value="0.75" />
+    <NumberToken name="stop-end" value="1" />
+  </div>
+</Preview>

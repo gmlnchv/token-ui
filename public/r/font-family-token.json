@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "font-family-token",
+  "type": "registry:component",
+  "title": "FontFamilyToken",
+  "description": "A token variant with a type icon for font family values.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@tokenui/icon-token"
+  ],
+  "files": [
+    {
+      "path": "registry/components/font-family-token.tsx",
+      "content": "'use client'\n\nimport { Type } from 'lucide-react'\n\nimport { BaseIconToken, type BaseIconTokenProps } from './icon-token'\n\ntype FontFamilyTokenProps = Omit<BaseIconTokenProps, 'icon'> & {\n  icon?: BaseIconTokenProps['icon']\n}\n\nfunction FontFamilyToken({ icon: Icon = Type, ...props }: FontFamilyTokenProps) {\n  return <BaseIconToken icon={Icon} {...props} />\n}\n\nexport { FontFamilyToken, type FontFamilyTokenProps }\n",
+      "type": "registry:component"
+    }
+  ]
+}

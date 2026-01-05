@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "font-weight-token",
+  "type": "registry:component",
+  "title": "FontWeightToken",
+  "description": "A token variant with a weight icon for font weight values.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@tokenui/icon-token"
+  ],
+  "files": [
+    {
+      "path": "registry/components/font-weight-token.tsx",
+      "content": "'use client'\n\nimport { Weight } from 'lucide-react'\n\nimport { BaseIconToken, type BaseIconTokenProps } from './icon-token'\n\ntype FontWeightTokenProps = Omit<BaseIconTokenProps, 'icon'> & {\n  icon?: BaseIconTokenProps['icon']\n}\n\nfunction FontWeightToken({ icon: Icon = Weight, ...props }: FontWeightTokenProps) {\n  return <BaseIconToken icon={Icon} {...props} />\n}\n\nexport { FontWeightToken, type FontWeightTokenProps }\n",
+      "type": "registry:component"
+    }
+  ]
+}

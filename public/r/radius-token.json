@@ -4,8 +4,12 @@
   "type": "registry:component",
   "title": "RadiusToken",
   "description": "A token variant with a spline icon for border radius values.",
-  "dependencies": ["lucide-react"],
-  "registryDependencies": ["@tokenui/icon-token"],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@tokenui/icon-token"
+  ],
   "files": [
     {
       "path": "registry/components/radius-token.tsx",

@@ -4,7 +4,9 @@
   "type": "registry:component",
   "title": "TokenIndicator",
   "description": "A small indicator that reads token context, supports custom shapes and children.",
-  "registryDependencies": ["@tokenui/token"],
+  "registryDependencies": [
+    "@tokenui/token"
+  ],
   "files": [
     {
       "path": "registry/components/token-indicator.tsx",

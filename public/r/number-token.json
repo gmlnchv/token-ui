@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-token",
+  "type": "registry:component",
+  "title": "NumberToken",
+  "description": "A token variant with a hash icon for numeric values like line-height.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@tokenui/icon-token"
+  ],
+  "files": [
+    {
+      "path": "registry/components/number-token.tsx",
+      "content": "'use client'\n\nimport { Hash } from 'lucide-react'\n\nimport { BaseIconToken, type BaseIconTokenProps } from './icon-token'\n\ntype NumberTokenProps = Omit<BaseIconTokenProps, 'icon'> & {\n  icon?: BaseIconTokenProps['icon']\n}\n\nfunction NumberToken({ icon: Icon = Hash, ...props }: NumberTokenProps) {\n  return <BaseIconToken icon={Icon} {...props} />\n}\n\nexport { NumberToken, type NumberTokenProps }\n",
+      "type": "registry:component"
+    }
+  ]
+}
