@@ -3,6 +3,7 @@
     "token",
     "token-indicator",
     "color-token",
+    "color-ramp",
     "elevation-token",
     "duration-token",
     "spacing-token",
