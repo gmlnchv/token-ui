@@ -1,9 +1,9 @@
 {
   "pages": [
+    "---[Boxes]Tokens---",
     "token",
     "token-indicator",
     "color-token",
-    "color-ramp",
     "elevation-token",
     "duration-token",
     "spacing-token",
@@ -12,6 +12,8 @@
     "radius-token",
     "font-family-token",
     "font-weight-token",
-    "number-token"
+    "number-token",
+    "---[Palette]Color---",
+    "color-ramp"
   ]
 }
