@@ -109,8 +109,7 @@ function TokenName({ children, onClick, copyable = true, ...props }: TokenNamePr
  * Use this primitive when building custom token compositions.
  */
 function TokenValue({ ...props }: React.ComponentProps<typeof TooltipContent>) {
-  const { value } = useTokenContext()
-  return <TooltipContent {...props}>{value}</TooltipContent>
+  return <TooltipContent sideOffset={4} {...props} />
 }
 
 type TokenProps = {
@@ -128,7 +127,7 @@ function Token({ name, value, children, ...props }: TokenProps) {
     <TokenProvider name={name} value={value}>
       <TokenRoot {...props}>
         {children}
-        <TokenValue />
+        <TokenValue>{value}</TokenValue>
       </TokenRoot>
     </TokenProvider>
   )

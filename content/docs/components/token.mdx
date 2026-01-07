@@ -4,8 +4,9 @@ description: A component for displaying name/value pairs as interactive tooltips
 ---
 
 import { BasicToken as Token, Token as TokenComposed, TokenName, TokenProvider, TokenRoot, TokenValue } from '@/registry/components/token'
-import { TooltipTrigger } from '@/registry/ui/tooltip'
-import { AlertTriangle } from 'lucide-react'
+import { TokenIndicator } from '@/registry/components/token-indicator'
+import { TooltipTrigger, TooltipContent } from '@/registry/ui/tooltip'
+import { AlertTriangle, Blend } from 'lucide-react'
 
 ## Overview
 
@@ -22,106 +23,259 @@ Use the `Token` component to document any design token. The token name appears a
 <Preview code={`import { BasicToken as Token } from '@/components/token'
 
   <div className="flex gap-2 flex-wrap">
-    <Token name="spacing-xs" value="4px" />
-    <Token name="spacing-sm" value="8px" />
-    <Token name="spacing-md" value="16px" />
-    <Token name="spacing-lg" value="24px" />
-    <Token name="spacing-xl" value="32px" />
+    <Token name="spacing-2" value="4px" />
+    <Token name="spacing-4" value="8px" />
+    <Token name="spacing-8" value="16px" />
+    <Token name="spacing-12" value="24px" />
+    <Token name="spacing-16" value="32px" />
   </div>`}>
   <div className="flex gap-2 flex-wrap">
-    <Token name="spacing-xs" value="4px" />
-    <Token name="spacing-sm" value="8px" />
-    <Token name="spacing-md" value="16px" />
-    <Token name="spacing-lg" value="24px" />
-    <Token name="spacing-xl" value="32px" />
+    <Token name="spacing-2" value="4px" />
+    <Token name="spacing-4" value="8px" />
+    <Token name="spacing-8" value="16px" />
+    <Token name="spacing-12" value="24px" />
+    <Token name="spacing-16" value="32px" />
   </div>
 </Preview>
 
 ### Copy to Clipboard
 
-By default, clicking a token name copies it to the clipboard and displays "Copied" for 2 seconds. You can disable this behavior by setting `copyable={false}`:
+By default, clicking a token name copies it to the clipboard. Feel free to disable this behavior by setting `copyable={false}`:
 
 <Preview code={`import { BasicToken as Token } from '@/components/token'
 
-  <Token name="brand-primary" value="#3b82f6" copyable={false} />`}>
-  <Token name="brand-primary" value="#3b82f6" copyable={false} />
+  <Token name="color-brand-primary" value="#3b82f6" copyable={false} />`}>
+  <Token name="color-brand-primary" value="#3b82f6" copyable={false} />
 </Preview>
 
 ## Composition
 
 The Token component provides **three levels of abstraction**, letting you choose the right balance between convenience and control:
 
-### `BasicToken`
+### Pre-Composed
 
-The simplest approach. Perfect for most use cases. This is the default export.
+An opinionated, ready-to-use component with sensible defaults. Perfect for common cases where you don't need custom composition.
 
 <Preview code={`import { BasicToken as Token } from '@/components/token'
 
   <div className="flex gap-2 flex-wrap">
-    <Token name="primary" value="#3b82f6" />
-    <Token name="secondary" value="#64748b" copyable={false} />
+    <Token name="color-primary-600" value="#3b82f6" />
+    <Token name="color-neutral-500" value="#64748b" copyable={false} />
   </div>`}>
   <div className="flex gap-2 flex-wrap">
-    <Token name="primary" value="#3b82f6" />
-    <Token name="secondary" value="#64748b" copyable={false} />
+    <Token name="color-primary-600" value="#3b82f6" />
+    <Token name="color-neutral-500" value="#64748b" copyable={false} />
   </div>
 </Preview>
 
-### `Token` + Custom Children
+### Custom Trigger
 
-Use when you need custom trigger content but want the standard tooltip behavior. Great for adding icons, indicators, or custom layouts.
+Use when you need to customize the trigger content with badges, labels, or semantic UI elements while keeping the standard tooltip behavior.
 
 <Preview code={`import { Token, TokenName } from '@/components/token'
-import { AlertTriangle } from 'lucide-react'
 
-  <Token name="deprecated-color" value="#dc2626">
+  <Token name="color-accent-experimental" value="#a855f7">
     <TokenName className="gap-2">
-      <AlertTriangle className="size-3.5" />
-      <span>deprecated-color</span>
+      <span>color-accent-experimental</span>
+      <span className="rounded-full bg-purple-100 px-1.5 py-0.5 text-[10px] font-medium text-purple-700">
+        Beta
+      </span>
     </TokenName>
   </Token>`}>
-  <TokenComposed name="deprecated-color" value="#dc2626">
+  <TokenComposed name="color-accent-experimental" value="#a855f7">
     <TokenName className="gap-2">
-      <AlertTriangle className="size-3.5" />
-      <span>deprecated-color</span>
+      <span>color-accent-experimental</span>
+      <span className="rounded-full bg-purple-100 px-1.5 py-0.5 text-[10px] font-medium text-purple-700">
+        Beta
+      </span>
     </TokenName>
   </TokenComposed>
 </Preview>
 
-### Low-Level Primitives
+For visual indicators that display the token's value (like color swatches), you can use [`TokenIndicator`](#tokenindicator) instead.
 
-Full control for advanced use cases. Compose primitives directly when you need completely custom behavior, different tooltip settings, or non-standard interactions.
+### Primitives
 
-<Preview code={`import { TokenProvider, TokenRoot, TokenValue } from '@/components/token'
-import { TooltipTrigger } from '@/components/ui/tooltip'
+Maximum flexibility for advanced use cases. Compose primitives directly when you need custom tooltip content, non-standard interactions, or integration with other components.
 
-  <TokenProvider name="special-token" value="Custom implementation">
-    <TokenRoot delayDuration={0}>
-      <TooltipTrigger asChild>
-        <button className="px-3 py-1 rounded-full bg-orange-100 text-orange-900 text-sm font-medium hover:bg-orange-200">
-          Click for details
-        </button>
-      </TooltipTrigger>
-      <TokenValue />
+This example shows a spacing token with a custom-styled tooltip and visual preview—something you can't achieve with the pre-composed components:
+
+<Preview code={`import { TokenProvider, TokenRoot, TokenName, TokenValue } from '@/components/token'
+
+  <TokenProvider name="spacing-8" value="64px">
+    <TokenRoot>
+      <TokenName className="border-blue-400 bg-blue-500/10 hover:bg-blue-500/20" />
+      <TokenValue className="border-blue-400 bg-blue-500/10 px-4 py-3">
+        <div 
+          className="rounded border-2 border-dashed border-blue-400 bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm font-medium" 
+          style={{ width: '64px', height: '64px' }} 
+        >
+          64px
+        </div>
+      </TokenValue>
     </TokenRoot>
   </TokenProvider>`}>
-  <TokenProvider name="special-token" value="Custom implementation">
-    <TokenRoot delayDuration={0}>
-      <TooltipTrigger asChild>
-        <button className="px-3 py-1 rounded-full bg-orange-100 text-orange-900 text-sm font-medium hover:bg-orange-200">
-          Click for details
-        </button>
-      </TooltipTrigger>
-      <TokenValue />
+  <TokenProvider name="spacing-8" value="64px">
+    <TokenRoot>
+      <TokenName className="border-blue-400 bg-blue-500/10 hover:bg-blue-500/20" />
+      <TokenValue className="border-blue-400 bg-blue-500/10 px-4 py-3">
+        <div 
+          className="rounded border-2 border-dashed border-blue-400 bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm font-medium" 
+          style={{ width: '64px', height: '64px' }} 
+        >
+          64px
+        </div>
+      </TokenValue>
     </TokenRoot>
   </TokenProvider>
 </Preview>
 
-### Available Primitives
+## API Reference
 
-- **`TokenProvider`** - Context provider for name/value
-- **`TokenRoot`** - Tooltip wrapper with configurable delay
-- **`TokenName`** - Button trigger with copy functionality
-- **`TokenValue`** - Tooltip content displaying the value
+### `BasicToken`
 
-Since you own the code after installation, feel free to modify these components, add new props, or create project-specific variants.
+The default export. A fully composed token component for common use cases.
+
+**Props:**
+- `name` (string, required) - The token name displayed and copied to clipboard
+- `value` (string, required) - The token value displayed in the tooltip
+- `copyable` (boolean, optional) - Whether clicking copies the name. Default: `true`
+- All props from Radix UI's `Tooltip` component
+
+### `Token`
+
+Mid-level composition that accepts custom children as the tooltip trigger.
+
+**Props:**
+- `name` (string, required) - The token name
+- `value` (string, required) - The token value
+- `children` (ReactNode, required) - Custom trigger content
+- All props from Radix UI's `Tooltip` component
+
+### Primitives
+
+Low-level building blocks for custom compositions.
+
+#### `TokenProvider`
+
+Context provider that makes name and value available to child components.
+
+**Props:**
+- `name` (string, required) - The token name
+- `value` (string, required) - The token value
+- `children` (ReactNode, required) - Child components
+
+#### `TokenRoot`
+
+Tooltip wrapper with default delay configuration.
+
+**Props:**
+- All props from Radix UI's `Tooltip` component
+- `delayDuration` defaults to `200ms`
+
+#### `TokenName`
+
+Button trigger that displays the token name and copies it on click.
+
+**Props:**
+- `copyable` (boolean, optional) - Enable/disable copy functionality. Default: `true`
+- `children` (ReactNode, optional) - Custom content. Defaults to token name from context
+- All props from the `Button` component
+
+#### `TokenValue`
+
+Tooltip content that displays the token value from context.
+
+**Props:**
+- All props from Radix UI's `TooltipContent` component
+
+### Sub-components
+
+#### `TokenIndicator`
+
+A context-aware indicator that displays the token value as a background color. Use with `TokenName` to add visual indicators to tokens.
+
+**Props:**
+- `className` (string, optional) - Custom styles
+- `style` (CSSProperties, optional) - Inline styles (merged with `backgroundColor: value`)
+- `children` (ReactNode, optional) - Custom content like icons
+- All props from `HTMLSpanElement`
+
+**Installation:**
+
+<Installer packageName="token-indicator" />
+
+**Example:**
+
+<Preview code={`import { Token, TokenName } from '@/components/token'
+import { TokenIndicator } from '@/components/token-indicator'
+
+  <Token name="color-brand-primary" value="#3b82f6">
+    <TokenName className="gap-2">
+      <TokenIndicator />
+      <span>color-brand-primary</span>
+    </TokenName>
+  </Token>`}>
+  <TokenComposed name="color-brand-primary" value="#3b82f6">
+    <TokenName className="gap-2">
+      <TokenIndicator />
+      <span>color-brand-primary</span>
+    </TokenName>
+  </TokenComposed>
+</Preview>
+
+Customize the indicator's shape and add custom children:
+
+<Preview code={`import { Token, TokenName } from '@/components/token'
+import { TokenIndicator } from '@/components/token-indicator'
+import { Blend } from 'lucide-react'
+
+  <div className="flex flex-wrap items-center gap-3">
+    <Token name="color-primary-500" value="#3B82F6">
+      <TokenName className="gap-2">
+        <TokenIndicator />
+        <span>color-primary-500</span>
+      </TokenName>
+    </Token>
+
+    <Token name="color-accent-base" value="#8B5CF6">
+      <TokenName className="gap-2">
+        <TokenIndicator className="size-5 rounded-sm" />
+        <span>color-accent-base</span>
+      </TokenName>
+    </Token>
+
+    <Token name="color-surface-brand" value="#10B981">
+      <TokenName className="gap-2">
+        <TokenIndicator className="bg-transparent p-0.5">
+          <Blend className="size-2.5 text-white" />
+        </TokenIndicator>
+        <span>color-surface-brand</span>
+      </TokenName>
+    </Token>
+  </div>`}>
+  <div className="flex flex-wrap items-center gap-3">
+    <TokenComposed name="color-primary-500" value="#3B82F6">
+      <TokenName className="gap-2">
+        <TokenIndicator />
+        <span>color-primary-500</span>
+      </TokenName>
+    </TokenComposed>
+
+    <TokenComposed name="color-accent-base" value="#8B5CF6">
+      <TokenName className="gap-2">
+        <TokenIndicator className="size-5 rounded-sm" />
+        <span>color-accent-base</span>
+      </TokenName>
+    </TokenComposed>
+
+    <TokenComposed name="color-surface-brand" value="#10B981">
+      <TokenName className="gap-2">
+        <TokenIndicator className="bg-transparent p-0.5">
+          <Blend className="size-2.5 text-white" />
+        </TokenIndicator>
+        <span>color-surface-brand</span>
+      </TokenName>
+    </TokenComposed>
+  </div>
+</Preview>
