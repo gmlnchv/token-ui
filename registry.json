@@ -33,7 +33,7 @@
       "name": "token",
       "type": "registry:component",
       "title": "Token",
-      "description": "A tooltip-based component for documenting design tokens.",
+      "description": "A tooltip-based component for documenting design tokens. Includes TokenIndicator for visual value display.",
       "registryDependencies": ["@tokenui/tooltip", "@tokenui/button"],
       "files": [
         {
@@ -43,24 +43,11 @@
       ]
     },
     {
-      "name": "token-indicator",
-      "type": "registry:component",
-      "title": "TokenIndicator",
-      "description": "A small indicator that reads token context, supports custom shapes and children.",
-      "registryDependencies": ["@tokenui/token"],
-      "files": [
-        {
-          "path": "registry/components/token-indicator.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
       "name": "icon-token",
       "type": "registry:component",
       "title": "BaseIconToken",
       "description": "A base token variant that renders an icon next to the token name; use it to build custom icon tokens.",
-      "registryDependencies": ["@tokenui/token-indicator"],
+      "registryDependencies": ["@tokenui/token"],
       "dependencies": ["lucide-react"],
       "files": [
         {
@@ -74,7 +61,7 @@
       "type": "registry:component",
       "title": "ColorToken",
       "description": "A specialized component for documenting color tokens.",
-      "registryDependencies": ["@tokenui/token-indicator"],
+      "registryDependencies": ["@tokenui/token"],
       "files": [
         {
           "path": "registry/components/color-token.tsx",

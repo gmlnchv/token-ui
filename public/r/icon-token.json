@@ -8,12 +8,12 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@tokenui/token-indicator"
+    "@tokenui/token"
   ],
   "files": [
     {
       "path": "registry/components/icon-token.tsx",
-      "content": "'use client'\n\nimport type * as React from 'react'\n\nimport { Token, TokenName, type TokenProps } from './token'\nimport { TokenIndicator } from './token-indicator'\n\ntype IconComponent = React.ComponentType<React.ComponentProps<'svg'>>\n\ntype BaseIconTokenProps = TokenProps & {\n  icon: IconComponent\n  iconClassName?: string\n  indicatorProps?: React.ComponentProps<typeof TokenIndicator>\n  children?: React.ReactNode\n}\n\nfunction BaseIconToken({\n  icon: Icon,\n  iconClassName = 'size-4 text-muted-foreground',\n  indicatorProps,\n  children,\n  name,\n  value,\n  ...props\n}: BaseIconTokenProps) {\n  const { className: indicatorClassName, ...restIndicatorProps } = indicatorProps ?? {}\n\n  return (\n    <Token name={name} value={value} {...props}>\n      <TokenName className=\"gap-2\">\n        <TokenIndicator className={indicatorClassName} {...restIndicatorProps}>\n          <Icon className={iconClassName} aria-hidden />\n        </TokenIndicator>\n        <span>{name}</span>\n        {children}\n      </TokenName>\n    </Token>\n  )\n}\n\nexport { BaseIconToken, type BaseIconTokenProps }\n",
+      "content": "'use client'\n\nimport type * as React from 'react'\n\nimport { Token, TokenName, type TokenProps, TokenIndicator } from './token'\n\ntype IconComponent = React.ComponentType<React.ComponentProps<'svg'>>\n\ntype BaseIconTokenProps = TokenProps & {\n  icon: IconComponent\n  iconClassName?: string\n  indicatorProps?: React.ComponentProps<typeof TokenIndicator>\n  children?: React.ReactNode\n}\n\nfunction BaseIconToken({\n  icon: Icon,\n  iconClassName = 'size-4 text-muted-foreground',\n  indicatorProps,\n  children,\n  name,\n  value,\n  ...props\n}: BaseIconTokenProps) {\n  const { className: indicatorClassName, ...restIndicatorProps } = indicatorProps ?? {}\n\n  return (\n    <Token name={name} value={value} {...props}>\n      <TokenName className=\"gap-2\">\n        <TokenIndicator className={indicatorClassName} {...restIndicatorProps}>\n          <Icon className={iconClassName} aria-hidden />\n        </TokenIndicator>\n        <span>{name}</span>\n        {children}\n      </TokenName>\n    </Token>\n  )\n}\n\nexport { BaseIconToken, type BaseIconTokenProps }\n",
       "type": "registry:component"
     }
   ]

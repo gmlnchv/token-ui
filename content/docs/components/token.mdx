@@ -3,8 +3,7 @@ title: Token
 description: A component for displaying name/value pairs as interactive tooltips. Serves as the base primitive for specialized token variants.
 ---
 
-import { BasicToken as Token, Token as TokenComposed, TokenName, TokenProvider, TokenRoot, TokenValue } from '@/registry/components/token'
-import { TokenIndicator } from '@/registry/components/token-indicator'
+import { BasicToken as Token, Token as TokenComposed, TokenName, TokenProvider, TokenRoot, TokenValue, TokenIndicator } from '@/registry/components/token'
 import { TooltipTrigger, TooltipContent } from '@/registry/ui/tooltip'
 import { AlertTriangle, Blend } from 'lucide-react'
 
@@ -134,7 +133,7 @@ This example shows a spacing token with a custom-styled tooltip and visual previ
 
 ### `BasicToken`
 
-The default export. A fully composed token component for common use cases.
+A fully composed token component with sensible defaults. This is the recommended starting point.
 
 **Props:**
 - `name` (string, required) - The token name displayed and copied to clipboard
@@ -144,7 +143,7 @@ The default export. A fully composed token component for common use cases.
 
 ### `Token`
 
-Mid-level composition that accepts custom children as the tooltip trigger.
+Mid-level composition that accepts custom children as the tooltip trigger. Use when you need to customize the trigger beyond the basic button.
 
 **Props:**
 - `name` (string, required) - The token name
@@ -152,58 +151,50 @@ Mid-level composition that accepts custom children as the tooltip trigger.
 - `children` (ReactNode, required) - Custom trigger content
 - All props from Radix UI's `Tooltip` component
 
-### Primitives
+### `TokenProvider`
 
-Low-level building blocks for custom compositions.
-
-#### `TokenProvider`
-
-Context provider that makes name and value available to child components.
+Context provider that makes token name and value available to all child components.
 
 **Props:**
 - `name` (string, required) - The token name
 - `value` (string, required) - The token value
 - `children` (ReactNode, required) - Child components
 
-#### `TokenRoot`
+### `TokenRoot`
 
-Tooltip wrapper with default delay configuration.
+Tooltip wrapper with default delay configuration. Wraps the entire token composition.
 
 **Props:**
 - All props from Radix UI's `Tooltip` component
 - `delayDuration` defaults to `200ms`
 
-#### `TokenName`
+### `TokenName`
 
-Button trigger that displays the token name and copies it on click.
+Button trigger that displays the token name and copies it to the clipboard on click. Reads the name from `TokenProvider` context.
 
 **Props:**
 - `copyable` (boolean, optional) - Enable/disable copy functionality. Default: `true`
 - `children` (ReactNode, optional) - Custom content. Defaults to token name from context
 - All props from the `Button` component
 
-#### `TokenValue`
+### `TokenValue`
 
-Tooltip content that displays the token value from context.
+Tooltip content wrapper with default spacing. Can display the token value or accept custom children for richer content.
 
 **Props:**
+- `children` (ReactNode, optional) - Custom tooltip content
+- `sideOffset` defaults to `4px`
 - All props from Radix UI's `TooltipContent` component
 
-### Sub-components
+### `TokenIndicator`
 
-#### `TokenIndicator`
-
-A context-aware indicator that displays the token value as a background color. Use with `TokenName` to add visual indicators to tokens.
+A context-aware visual indicator that displays the token value as a background color. Reads the value from `TokenProvider` context.
 
 **Props:**
-- `className` (string, optional) - Custom styles
+- `className` (string, optional) - Custom styles for shape, size, etc.
 - `style` (CSSProperties, optional) - Inline styles (merged with `backgroundColor: value`)
-- `children` (ReactNode, optional) - Custom content like icons
+- `children` (ReactNode, optional) - Custom content like icons or glyphs
 - All props from `HTMLSpanElement`
-
-**Installation:**
-
-<Installer packageName="token-indicator" />
 
 **Example:**
 

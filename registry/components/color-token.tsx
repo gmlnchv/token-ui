@@ -1,7 +1,6 @@
 'use client'
 
-import { Token, TokenName, type TokenProps } from './token'
-import { TokenIndicator } from './token-indicator'
+import { Token, TokenIndicator, TokenName, type TokenProps } from './token'
 
 function ColorToken({ name, value, ...props }: TokenProps) {
   return (

@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import { cn } from '@/lib/utils'
 import { Button } from '@/registry/ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/registry/ui/tooltip'
 
@@ -112,6 +113,32 @@ function TokenValue({ ...props }: React.ComponentProps<typeof TooltipContent>) {
   return <TooltipContent sideOffset={4} {...props} />
 }
 
+type TokenIndicatorProps = React.HTMLAttributes<HTMLSpanElement> & {
+  children?: React.ReactNode
+}
+
+/**
+ * Context-aware indicator that displays the token value as a background color.
+ * Use with TokenName to add visual indicators to tokens.
+ */
+function TokenIndicator({ className, style, children, ...props }: TokenIndicatorProps) {
+  const { value } = useTokenContext()
+
+  return (
+    <span
+      aria-hidden
+      className={cn(
+        'inline-flex size-4 items-center justify-center rounded-full align-middle',
+        className,
+      )}
+      style={{ backgroundColor: value, ...style }}
+      {...props}
+    >
+      {children}
+    </span>
+  )
+}
+
 type TokenProps = {
   name: string
   value: string
@@ -154,6 +181,8 @@ export {
   TokenRoot,
   TokenName,
   TokenValue,
+  TokenIndicator,
   useTokenContext,
   type TokenProps,
+  type TokenIndicatorProps,
 }
