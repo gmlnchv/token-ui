@@ -208,13 +208,13 @@
       ]
     },
     {
-      "name": "color-ramp",
+      "name": "color-palette",
       "type": "registry:component",
-      "title": "ColorRamp",
-      "description": "A component for displaying labeled color scales for palettes and token ramps",
+      "title": "ColorPalette",
+      "description": "A component for displaying color collections including ramps, scales, and palettes",
       "files": [
         {
-          "path": "registry/components/color-ramp.tsx",
+          "path": "registry/components/color-palette.tsx",
           "type": "registry:component"
         }
       ]

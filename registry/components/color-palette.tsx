@@ -4,7 +4,7 @@ import type { HTMLAttributes } from 'react'
 import { cn } from '@/lib/utils'
 
 /**
- * Primitives for composable color ramp components
+ * Primitives for composable color palette components
  */
 
 type ColorSwatchProps = HTMLAttributes<HTMLDivElement> & {
@@ -49,9 +49,9 @@ function ColorSwatchLabel({ className, children, ...props }: ColorSwatchLabelPro
   )
 }
 
-type ColorRampLabelProps = HTMLAttributes<HTMLDivElement>
+type ColorPaletteLabelProps = HTMLAttributes<HTMLDivElement>
 
-function ColorRampLabel({ className, children, ...props }: ColorRampLabelProps) {
+function ColorPaletteLabel({ className, children, ...props }: ColorPaletteLabelProps) {
   return (
     <div className={cn('font-medium text-sm', className)} {...props}>
       {children}
@@ -59,31 +59,31 @@ function ColorRampLabel({ className, children, ...props }: ColorRampLabelProps) 
   )
 }
 
-// ColorRamp - Convenience wrapper
+// ColorPalette - Convenience wrapper
 
 type ColorStop = {
   name?: string
   value: string
 }
 
-type ColorRampProps = {
+type ColorPaletteProps = {
   /** Array of colors to display */
   colors: string[] | ColorStop[]
-  /** Orientation of the ramp (default: horizontal) */
+  /** Orientation of the palette (default: horizontal) */
   orientation?: 'horizontal' | 'vertical'
   /** Optional label */
   label?: string
-  /** Additional class name for the wrapper (label + ramp stack) */
+  /** Additional class name for the wrapper (label + palette stack) */
   className?: string
 }
 
 /**
- * Mid-level color ramp with labels shown by default.
+ * Mid-level color palette with labels shown by default.
  * Accepts color strings or `{ name, value }` objects.
  * Uses flex layout; switch to vertical via `orientation="vertical"`.
  * Compose your own container plus `ColorSwatch`/`ColorSwatchLabel` for custom layouts.
  */
-function ColorRamp({ colors, orientation = 'horizontal', label, className }: ColorRampProps) {
+function ColorPalette({ colors, orientation = 'horizontal', label, className }: ColorPaletteProps) {
   const colorStops: ColorStop[] = colors.map((color) =>
     typeof color === 'string' ? { value: color } : color,
   )
@@ -92,7 +92,7 @@ function ColorRamp({ colors, orientation = 'horizontal', label, className }: Col
 
   return (
     <div className={cn('space-y-2', className)}>
-      {label && <ColorRampLabel>{label}</ColorRampLabel>}
+      {label && <ColorPaletteLabel>{label}</ColorPaletteLabel>}
       <div className={cn('flex overflow-hidden rounded-md border', orientationClass)}>
         {colorStops.map((stop, index) => (
           <ColorSwatch
@@ -109,13 +109,13 @@ function ColorRamp({ colors, orientation = 'horizontal', label, className }: Col
 }
 
 export {
-  ColorRamp,
+  ColorPalette,
   ColorSwatch,
   ColorSwatchLabel,
-  ColorRampLabel,
-  type ColorRampProps,
+  ColorPaletteLabel,
+  type ColorPaletteProps,
   type ColorSwatchProps,
   type ColorSwatchLabelProps,
-  type ColorRampLabelProps,
+  type ColorPaletteLabelProps,
   type ColorStop,
 }

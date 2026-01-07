@@ -14,6 +14,6 @@
     "font-weight-token",
     "number-token",
     "---[Palette]Color---",
-    "color-ramp"
+    "color-palette"
   ]
 }

@@ -83,18 +83,6 @@
       ]
     },
     {
-      "name": "color-ramp",
-      "type": "registry:component",
-      "title": "ColorRamp",
-      "description": "Primitives and a mid-level component for color ramps.",
-      "files": [
-        {
-          "path": "registry/components/color-ramp.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
       "name": "elevation-token",
       "type": "registry:component",
       "title": "ElevationToken",
@@ -215,6 +203,18 @@
       "files": [
         {
           "path": "registry/components/number-token.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "color-palette",
+      "type": "registry:component",
+      "title": "ColorPalette",
+      "description": "A component for displaying color collections including ramps, scales, and palettes",
+      "files": [
+        {
+          "path": "registry/components/color-palette.tsx",
           "type": "registry:component"
         }
       ]

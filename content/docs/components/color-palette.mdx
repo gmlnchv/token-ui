@@ -1,61 +1,61 @@
 ---
-title: "Color Ramp"
-description: "Display labeled color scales for palettes and token ramps"
+title: "Color Palette"
+description: "Display labeled color collections including ramps, scales, and brand palettes"
 ---
 
 import {
-  ColorRamp,
-  ColorRampLabel,
+  ColorPalette,
+  ColorPaletteLabel,
   ColorSwatch,
   ColorSwatchLabel,
-} from '@/registry/components/color-ramp'
+} from '@/registry/components/color-palette'
 
 ## Overview
 
-**ColorRamp** displays labeled horizontal strips of colors—perfect for documenting scales, brand palettes, and semantic ramps.
+**ColorPalette** displays labeled color collections as horizontal or vertical strips—perfect for documenting color ramps, scales, brand palettes, and semantic token sets.
 
-These layouts are intentionally subjective and easy to reshape. You get a pre-composed `ColorRamp` for speed, plus primitives (`ColorSwatch`, `ColorSwatchLabel`, `ColorRampLabel`) to fully control layout and behavior.
+These layouts are intentionally flexible and easy to reshape. You get a pre-composed `ColorPalette` for speed, plus primitives (`ColorSwatch`, `ColorSwatchLabel`, `ColorPaletteLabel`) to build custom layouts like grids or asymmetric compositions.
 
 ## Installation
 
-<Installer packageName="color-ramp" />
+<Installer packageName="color-palette" />
 
 ## Usage
 
-<Preview code={`import { ColorRamp } from '@/registry/components/color-ramp'
+<Preview code={`import { ColorPalette } from '@/registry/components/color-palette'
 
   <div className="space-y-4">
-    <ColorRamp 
+    <ColorPalette 
       colors={['#f0f9ff', '#e0f2fe', '#bae6fd', '#7dd3fc', '#38bdf8', '#0ea5e9', '#0284c7', '#0369a1', '#075985']}
       label="Blue"
     />
-    <ColorRamp 
+    <ColorPalette 
       colors={['#fef2f2', '#fee2e2', '#fecaca', '#fca5a5', '#f87171', '#ef4444', '#dc2626', '#b91c1c', '#991b1b']}
       label="Red"
     />
-    <ColorRamp 
+    <ColorPalette 
       colors={['#fefce8', '#fef9c3', '#fef08a', '#fde047', '#facc15', '#eab308', '#ca8a04', '#a16207', '#854d0e']}
       label="Yellow"
     />
-    <ColorRamp 
+    <ColorPalette 
       colors={['#f0fdf4', '#dcfce7', '#bbf7d0', '#86efac', '#4ade80', '#22c55e', '#16a34a', '#15803d', '#166534']}
       label="Green"
     />
   </div>`}>
   <div className="space-y-4">
-    <ColorRamp 
+    <ColorPalette 
       colors={['#f0f9ff', '#e0f2fe', '#bae6fd', '#7dd3fc', '#38bdf8', '#0ea5e9', '#0284c7', '#0369a1', '#075985']}
       label="Blue"
     />
-    <ColorRamp 
+    <ColorPalette 
       colors={['#fef2f2', '#fee2e2', '#fecaca', '#fca5a5', '#f87171', '#ef4444', '#dc2626', '#b91c1c', '#991b1b']}
       label="Red"
     />
-    <ColorRamp 
+    <ColorPalette 
       colors={['#fefce8', '#fef9c3', '#fef08a', '#fde047', '#facc15', '#eab308', '#ca8a04', '#a16207', '#854d0e']}
       label="Yellow"
     />
-    <ColorRamp 
+    <ColorPalette 
       colors={['#f0fdf4', '#dcfce7', '#bbf7d0', '#86efac', '#4ade80', '#22c55e', '#16a34a', '#15803d', '#166534']}
       label="Green"
     />
@@ -65,9 +65,9 @@ These layouts are intentionally subjective and easy to reshape. You get a pre-co
 
 ### Composition
 
-A pre-composed `ColorRamp` component is provided for convenience. Compose the low-level primitives (`ColorSwatch`, `ColorSwatchLabel`, `ColorRampLabel`) when you need full control over layout, spacing, or custom behavior.
+A pre-composed `ColorPalette` component is provided for convenience. Compose the low-level primitives (`ColorSwatch`, `ColorSwatchLabel`, `ColorPaletteLabel`) when you need full control over layout, spacing, or custom behavior.
 
-<Preview code={`import { ColorSwatch, ColorSwatchLabel } from '@/registry/components/color-ramp'
+<Preview code={`import { ColorSwatch, ColorSwatchLabel } from '@/registry/components/color-palette'
 
   <div className="grid grid-cols-3 auto-rows-fr aspect-square max-w-md overflow-hidden rounded-md border">
     <ColorSwatch value="#EFEEE9" name="White Mink" className="col-span-2 row-span-1">
@@ -117,37 +117,37 @@ A pre-composed `ColorRamp` component is provided for convenience. Compose the lo
 
 Toggle the layout with `orientation="vertical"`:
 
-<Preview code={`import { ColorRamp } from '@/registry/components/color-ramp'
+<Preview code={`import { ColorPalette } from '@/registry/components/color-palette'
 
   <div className="grid grid-cols-3 gap-4">
-    <ColorRamp 
+    <ColorPalette 
       colors={['#eff6ff', '#dbeafe', '#bfdbfe', '#93c5fd', '#60a5fa']}
       orientation="vertical"
       label="Blue"
     />
-    <ColorRamp 
+    <ColorPalette 
       colors={['#fdf4ff', '#fae8ff', '#f5d0fe', '#f0abfc', '#e879f9']}
       orientation="vertical"
       label="Fuchsia"
     />
-    <ColorRamp 
+    <ColorPalette 
       colors={['#fff7ed', '#ffedd5', '#fed7aa', '#fdba74', '#fb923c']}
       orientation="vertical"
       label="Orange"
     />
   </div>`}>
   <div className="grid grid-cols-3 gap-4">
-    <ColorRamp 
+    <ColorPalette 
       colors={['#eff6ff', '#dbeafe', '#bfdbfe', '#93c5fd', '#60a5fa']}
       orientation="vertical"
       label="Blue"
     />
-    <ColorRamp 
+    <ColorPalette 
       colors={['#fdf4ff', '#fae8ff', '#f5d0fe', '#f0abfc', '#e879f9']}
       orientation="vertical"
       label="Fuchsia"
     />
-    <ColorRamp 
+    <ColorPalette 
       colors={['#fff7ed', '#ffedd5', '#fed7aa', '#fdba74', '#fb923c']}
       orientation="vertical"
       label="Orange"
@@ -160,6 +160,6 @@ Toggle the layout with `orientation="vertical"`:
 ### Props
 
 - **colors** - Array of hex/rgb/hsl strings, or objects with `{ name, value }`
-- **label** - Optional text label above the ramp
+- **label** - Optional text label above the palette
 - **orientation** - `'horizontal'` (default) or `'vertical'`
-- **className** - Optional wrapper class for spacing/layout around the ramp
+- **className** - Optional wrapper class for spacing/layout around the palette
