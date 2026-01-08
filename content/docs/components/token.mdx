@@ -135,66 +135,45 @@ This example shows a spacing token with a custom-styled tooltip and visual previ
 
 A fully composed token component with sensible defaults. This is the recommended starting point.
 
-**Props:**
-- `name` (string, required) - The token name displayed and copied to clipboard
-- `value` (string, required) - The token value displayed in the tooltip
-- `copyable` (boolean, optional) - Whether clicking copies the name. Default: `true`
-- All props from Radix UI's `Tooltip` component
+<AutoTypeTable path="registry/components/token.tsx" name="BasicTokenProps" />
 
 ### `Token`
 
 Mid-level composition that accepts custom children as the tooltip trigger. Use when you need to customize the trigger beyond the basic button.
 
-**Props:**
-- `name` (string, required) - The token name
-- `value` (string, required) - The token value
-- `children` (ReactNode, required) - Custom trigger content
-- All props from Radix UI's `Tooltip` component
+<AutoTypeTable path="registry/components/token.tsx" name="TokenProps" />
 
 ### `TokenProvider`
 
 Context provider that makes token name and value available to all child components.
 
-**Props:**
-- `name` (string, required) - The token name
-- `value` (string, required) - The token value
-- `children` (ReactNode, required) - Child components
+<AutoTypeTable path="registry/components/token.tsx" name="TokenProviderProps" />
 
 ### `TokenRoot`
 
-Tooltip wrapper with default delay configuration. Wraps the entire token composition.
+Tooltip wrapper with default delay configuration. Wraps the entire token composition. See [Radix UI Tooltip](https://ui.shadcn.com/docs/components/tooltip) for additional props.
 
-**Props:**
-- All props from Radix UI's `Tooltip` component
-- `delayDuration` defaults to `200ms`
+**Default Props:**
+- `delayDuration`: `200ms`
 
 ### `TokenName`
 
 Button trigger that displays the token name and copies it to the clipboard on click. Reads the name from `TokenProvider` context.
 
-**Props:**
-- `copyable` (boolean, optional) - Enable/disable copy functionality. Default: `true`
-- `children` (ReactNode, optional) - Custom content. Defaults to token name from context
-- All props from the `Button` component
+<AutoTypeTable path="registry/components/token.tsx" name="TokenNameProps" />
 
 ### `TokenValue`
 
-Tooltip content wrapper with default spacing. Can display the token value or accept custom children for richer content.
+Tooltip content wrapper with default spacing. Can display the token value or accept custom children for richer content. See [Radix UI Tooltip](https://ui.shadcn.com/docs/components/tooltip) for additional props.
 
-**Props:**
-- `children` (ReactNode, optional) - Custom tooltip content
-- `sideOffset` defaults to `4px`
-- All props from Radix UI's `TooltipContent` component
+**Default Props:**
+- `sideOffset`: `4px`
 
 ### `TokenIndicator`
 
 A context-aware visual indicator that displays the token value as a background color. Reads the value from `TokenProvider` context.
 
-**Props:**
-- `className` (string, optional) - Custom styles for shape, size, etc.
-- `style` (CSSProperties, optional) - Inline styles (merged with `backgroundColor: value`)
-- `children` (ReactNode, optional) - Custom content like icons or glyphs
-- All props from `HTMLSpanElement`
+<AutoTypeTable path="registry/components/token.tsx" name="TokenIndicatorProps" />
 
 **Example:**
 
