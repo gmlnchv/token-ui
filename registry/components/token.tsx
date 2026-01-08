@@ -228,7 +228,7 @@ interface BasicTokenProps extends TokenProps {
 
 /**
  * Pre-composed token component for common use cases.
- * Displays token name as a button with copy functionality and value tooltip.
+ * Composes Token with TokenName to provide a button with copy functionality and value tooltip.
  * This is the default export and recommended for most use cases.
  */
 function BasicToken({ name, value, copyable, ...props }: BasicTokenProps) {

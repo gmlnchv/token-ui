@@ -131,45 +131,45 @@ This example shows a spacing token with a custom-styled tooltip and visual previ
 
 ## API Reference
 
-### `BasicToken`
+### BasicToken
 
-A fully composed token component with sensible defaults. This is the recommended starting point.
+A fully composed token component with sensible defaults. Composes `Token` with `TokenName` to provide a button with copy functionality and value tooltip. This is the recommended starting point.
 
 <AutoTypeTable path="registry/components/token.tsx" name="BasicTokenProps" />
 
-### `Token`
+### Token
 
-Mid-level composition that accepts custom children as the tooltip trigger. Use when you need to customize the trigger beyond the basic button.
+Mid-level composition that accepts custom children as the tooltip trigger. Composes `TokenProvider`, `TokenRoot`, and `TokenValue`. Use when you need to customize the trigger beyond the basic button.
 
 <AutoTypeTable path="registry/components/token.tsx" name="TokenProps" />
 
-### `TokenProvider`
+### TokenProvider
 
 Context provider that makes token name and value available to all child components.
 
 <AutoTypeTable path="registry/components/token.tsx" name="TokenProviderProps" />
 
-### `TokenRoot`
+### TokenRoot
 
-Tooltip wrapper with default delay configuration. Wraps the entire token composition. See [Radix UI Tooltip](https://ui.shadcn.com/docs/components/tooltip) for additional props.
+Provides the tooltip functionality. Composes `Tooltip` from `shadcn/ui`.
 
-**Default Props:**
-- `delayDuration`: `200ms`
+<DocsLink href="https://ui.shadcn.com/docs/components/tooltip">Docs</DocsLink>
 
-### `TokenName`
+### TokenName
 
-Button trigger that displays the token name and copies it to the clipboard on click. Reads the name from `TokenProvider` context.
+Button trigger that displays the token name and copies it to the clipboard on click. Reads the name from `TokenProvider` context. Composes `TooltipTrigger` from `shadcn/ui`.
+
+<DocsLink href="https://ui.shadcn.com/docs/components/tooltip">Docs</DocsLink>
 
 <AutoTypeTable path="registry/components/token.tsx" name="TokenNameProps" />
 
-### `TokenValue`
+### TokenValue
 
-Tooltip content wrapper with default spacing. Can display the token value or accept custom children for richer content. See [Radix UI Tooltip](https://ui.shadcn.com/docs/components/tooltip) for additional props.
+Tooltip content wrapper with default spacing. Can display the token value or accept custom children for richer content. Reads the value from `TokenProvider` context. Composes `TooltipContent` from `shadcn/ui`.
 
-**Default Props:**
-- `sideOffset`: `4px`
+<DocsLink href="https://ui.shadcn.com/docs/components/tooltip">Docs</DocsLink>
 
-### `TokenIndicator`
+### TokenIndicator
 
 A context-aware visual indicator that displays the token value as a background color. Reads the value from `TokenProvider` context.
 

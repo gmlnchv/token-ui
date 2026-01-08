@@ -2,7 +2,7 @@ import { createFileSystemGeneratorCache, createGenerator } from 'fumadocs-typesc
 import { AutoTypeTable } from 'fumadocs-typescript/ui'
 import defaultMdxComponents from 'fumadocs-ui/mdx'
 import type { MDXComponents } from 'mdx/types'
-
+import { DocsLink } from '@/components/docs-link'
 import { Installer } from '@/components/installer'
 import { Preview } from '@/components/preview'
 import { VariantNote } from '@/components/variant-note'
@@ -17,6 +17,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     Installer,
     Preview,
     VariantNote,
+    DocsLink,
     AutoTypeTable: (props) => <AutoTypeTable {...props} generator={generator} />,
     ...components,
   }
