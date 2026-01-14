@@ -52,44 +52,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Token Types Section */}
-        <section className="py-12 md:py-20">
-          <div className="container mx-auto">
-            <h2 className="text-center font-semibold text-2xl md:text-3xl mb-12">
-              Comprehensive Token Support
-            </h2>
-
-            <div className="max-w-3xl mx-auto">
-              <div className="grid gap-8 md:grid-cols-2">
-                <div>
-                  <h3 className="font-semibold text-lg mb-4">Core Types</h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>✅ Color</li>
-                    <li>✅ Dimension (spacing, radius)</li>
-                    <li>✅ Font Family</li>
-                    <li>✅ Font Weight</li>
-                    <li>✅ Duration</li>
-                    <li>✅ Number</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold text-lg mb-4">Composite Types</h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>✅ Typography</li>
-                    <li>✅ Shadow / Elevation</li>
-                    <li>🔜 Easing (Cubic Bézier)</li>
-                    <li>🔜 Border</li>
-                    <li>🔜 Transition</li>
-                    <li>🔜 Gradient</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="border-t border-border bg-muted/30 py-12 md:py-20">
           <div className="container mx-auto flex flex-col items-center gap-6 text-center">
