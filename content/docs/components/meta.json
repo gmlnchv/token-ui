@@ -2,7 +2,6 @@
   "pages": [
     "---[Boxes]Tokens---",
     "token",
-    "token-indicator",
     "color-token",
     "elevation-token",
     "duration-token",

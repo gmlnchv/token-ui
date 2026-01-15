@@ -212,7 +212,30 @@ export type TokenNameProps = {
 `}
 />
 
-Inherits all button props from the underlying `Button` component.
+### TokenValue
+
+Tooltip content wrapper with default spacing. Can display the token value or accept custom children for richer content. Reads the value from `TokenProvider` context. Composes `TooltipContent` from `shadcn/ui`.
+
+<DocsLink href="https://ui.shadcn.com/docs/components/tooltip">Docs</DocsLink>
+
+### TokenName
+
+Button trigger that displays the token name and copies it to the clipboard on click. Reads the name from `TokenProvider` context. Composes `TooltipTrigger` from `shadcn/ui`.
+
+<DocsLink href="https://ui.shadcn.com/docs/components/tooltip">Docs</DocsLink>
+
+<AutoTypeTable
+  name="TokenNameProps"
+  type={`
+export type TokenNameProps = {
+  /**
+   * Whether clicking the token name should copy it to the clipboard.
+   * @default true
+   */
+  copyable?: boolean
+}
+`}
+/>
 
 ### TokenValue
 
@@ -224,12 +247,7 @@ Tooltip content wrapper with default spacing. Can display the token value or acc
 
 A context-aware visual indicator that displays the token value as a background color. Reads the value from `TokenProvider` context.
 
-Inherits all standard span props from the underlying HTML element.
-
-**Example:**
-
-<Preview code={`import { Token, TokenName } from '@/components/token'
-import { TokenIndicator } from '@/components/token-indicator'
+<Preview code={`import { Token, TokenName, TokenIndicator } from '@/components/token'
 
   <Token name="color-brand-primary" value="#3b82f6">
     <TokenName className="gap-2">
@@ -247,8 +265,7 @@ import { TokenIndicator } from '@/components/token-indicator'
 
 Customize the indicator's shape and add custom children:
 
-<Preview code={`import { Token, TokenName } from '@/components/token'
-import { TokenIndicator } from '@/components/token-indicator'
+<Preview code={`import { Token, TokenName, TokenIndicator } from '@/components/token'
 import { Blend } from 'lucide-react'
 
   <div className="flex flex-wrap items-center gap-3">
