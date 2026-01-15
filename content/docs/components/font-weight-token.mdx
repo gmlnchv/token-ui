@@ -43,6 +43,27 @@ Use `FontWeightToken` for font weight values:
 
 <VariantNote />
 
+## API Reference
+
+### FontWeightToken
+
+<AutoTypeTable
+  type={`
+export type FontWeightTokenProps = {
+  /** The token name */
+  name: string
+  /** The font weight value (e.g., "400", "700", "normal", "bold") */
+  value: string
+  /** Optional icon className override */
+  iconClassName?: string
+  /** Optional custom children inside the indicator */
+  children?: React.ReactNode
+}
+`}
+/>
+
+Inherits all tooltip props from the underlying `Token` component.
+
 ## Spec Compliance
 
 The W3C Design Tokens specification defines `fontWeight` as:

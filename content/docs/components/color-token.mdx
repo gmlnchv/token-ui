@@ -36,3 +36,22 @@ Use the `ColorToken` component to document color tokens. Each token displays wit
     <ColorToken name="Success" value="#06B6D4" />
   </div>
 </Preview>
+
+<VariantNote />
+
+## API Reference
+
+### ColorToken
+
+<AutoTypeTable
+  type={`
+export type ColorTokenProps = {
+  /** The token name */
+  name: string
+  /** The token color value (hex, rgb, hsl, etc.) */
+  value: string
+}
+`}
+/>
+
+Inherits all tooltip props from the underlying `Token` component.

@@ -37,6 +37,27 @@ Use `NumberToken` for unitless numeric values:
 
 <VariantNote />
 
+## API Reference
+
+### NumberToken
+
+<AutoTypeTable
+  type={`
+export type NumberTokenProps = {
+  /** The token name */
+  name: string
+  /** The numeric value (e.g., "1.5", "2", "0.75") */
+  value: string
+  /** Optional icon className override */
+  iconClassName?: string
+  /** Optional custom children inside the indicator */
+  children?: React.ReactNode
+}
+`}
+/>
+
+Inherits all tooltip props from the underlying `Token` component.
+
 ## Spec Compliance
 
 The W3C Design Tokens specification defines `number` as:

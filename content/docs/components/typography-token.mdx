@@ -36,3 +36,24 @@ Use `TypographyToken` for typeface, size, and line-height values:
 </Preview>
 
 <VariantNote />
+
+## API Reference
+
+### TypographyToken
+
+<AutoTypeTable
+  type={`
+export type TypographyTokenProps = {
+  /** The token name */
+  name: string
+  /** The typography value (e.g., "font-family / size / line-height / weight") */
+  value: string
+  /** Optional icon className override */
+  iconClassName?: string
+  /** Optional custom children inside the indicator */
+  children?: React.ReactNode
+}
+`}
+/>
+
+Inherits all tooltip props from the underlying `Token` component.

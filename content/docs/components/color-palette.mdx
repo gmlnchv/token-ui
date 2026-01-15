@@ -155,11 +155,52 @@ Toggle the layout with `orientation="vertical"`:
   </div>
 </Preview>
 
-## API
+## API Reference
 
-### Props
+### ColorPalette
 
-- **colors** - Array of hex/rgb/hsl strings, or objects with `{ name, value }`
-- **label** - Optional text label above the palette
-- **orientation** - `'horizontal'` (default) or `'vertical'`
-- **className** - Optional wrapper class for spacing/layout around the palette
+Pre-composed palette component with labels shown by default.
+
+<AutoTypeTable
+  name="ColorPaletteProps"
+  type={`
+export type ColorPaletteProps = {
+  /** Array of colors to display */
+  colors: string[] | ColorStop[]
+  /** Orientation of the palette (default: horizontal) */
+  orientation?: 'horizontal' | 'vertical'
+  /** Optional label */
+  label?: string
+  /** Additional class name for the wrapper (label + palette stack) */
+  className?: string
+}
+`}
+/>
+
+### ColorSwatch
+
+A single color swatch in a palette.
+
+<AutoTypeTable
+  name="ColorSwatchProps"
+  type={`
+export type ColorSwatchProps = React.HTMLAttributes<HTMLDivElement> & {
+  /** Color value (hex, rgb, hsl, etc.) */
+  value: string
+  /** Optional name/label for the color */
+  name?: string
+}
+`}
+/>
+
+### ColorSwatchLabel
+
+Label displayed on hover inside a color swatch.
+
+Inherits all standard div props from the underlying HTML element.
+
+### ColorPaletteLabel
+
+Label displayed above a palette.
+
+Inherits all standard div props from the underlying HTML element.

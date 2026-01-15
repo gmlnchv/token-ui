@@ -38,3 +38,24 @@ Use `SpacingToken` for spacing, padding, or gap values:
 </Preview>
 
 <VariantNote />
+
+## API Reference
+
+### SpacingToken
+
+<AutoTypeTable
+  type={`
+export type SpacingTokenProps = {
+  /** The token name */
+  name: string
+  /** The spacing value (e.g., "8px", "1rem") */
+  value: string
+  /** Optional icon className override */
+  iconClassName?: string
+  /** Optional custom children inside the indicator */
+  children?: React.ReactNode
+}
+`}
+/>
+
+Inherits all tooltip props from the underlying `Token` component.

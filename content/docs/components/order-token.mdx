@@ -34,3 +34,24 @@ Use `OrderToken` for z-index or layering values:
 </Preview>
 
 <VariantNote />
+
+## API Reference
+
+### OrderToken
+
+<AutoTypeTable
+  type={`
+export type OrderTokenProps = {
+  /** The token name */
+  name: string
+  /** The z-index value (e.g., "0", "100", "9999") */
+  value: string
+  /** Optional icon className override */
+  iconClassName?: string
+  /** Optional custom children inside the indicator */
+  children?: React.ReactNode
+}
+`}
+/>
+
+Inherits all tooltip props from the underlying `Token` component.

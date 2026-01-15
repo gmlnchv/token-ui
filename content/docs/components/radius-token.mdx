@@ -38,3 +38,24 @@ Use `RadiusToken` for border radius values:
 </Preview>
 
 <VariantNote />
+
+## API Reference
+
+### RadiusToken
+
+<AutoTypeTable
+  type={`
+export type RadiusTokenProps = {
+  /** The token name */
+  name: string
+  /** The border radius value (e.g., "4px", "8px") */
+  value: string
+  /** Optional icon className override */
+  iconClassName?: string
+  /** Optional custom children inside the indicator */
+  children?: React.ReactNode
+}
+`}
+/>
+
+Inherits all tooltip props from the underlying `Token` component.

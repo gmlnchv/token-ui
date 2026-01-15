@@ -37,6 +37,27 @@ Use `FontFamilyToken` for font family and font stack values:
 
 <VariantNote />
 
+## API Reference
+
+### FontFamilyToken
+
+<AutoTypeTable
+  type={`
+export type FontFamilyTokenProps = {
+  /** The token name */
+  name: string
+  /** The font family value (e.g., "Inter, system-ui, sans-serif") */
+  value: string
+  /** Optional icon className override */
+  iconClassName?: string
+  /** Optional custom children inside the indicator */
+  children?: React.ReactNode
+}
+`}
+/>
+
+Inherits all tooltip props from the underlying `Token` component.
+
 ## Spec Compliance
 
 The W3C Design Tokens specification defines `fontFamily` as either:
