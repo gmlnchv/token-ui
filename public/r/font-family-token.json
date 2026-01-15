@@ -4,12 +4,8 @@
   "type": "registry:component",
   "title": "FontFamilyToken",
   "description": "A token variant with a type icon for font family values.",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@tokenui/icon-token"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@tokenui/icon-token"],
   "files": [
     {
       "path": "registry/components/font-family-token.tsx",

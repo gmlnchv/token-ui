@@ -21,15 +21,15 @@ export default function Home() {
         </div>
 
         {/* Features Section */}
-        <section className="border-t border-border bg-muted/30 py-12 md:py-20">
+        <section className="border-border border-t bg-muted/30 py-12 md:py-20">
           <div className="container mx-auto">
-            <h2 className="text-center font-semibold text-2xl md:text-3xl mb-12">Why Token UI?</h2>
+            <h2 className="mb-12 text-center font-semibold text-2xl md:text-3xl">Why Token UI?</h2>
 
-            <div className="grid gap-8 md:grid-cols-3 max-w-4xl mx-auto">
+            <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-3">
               <div className="flex flex-col gap-3">
                 <div className="text-3xl">✨</div>
                 <h3 className="font-semibold text-lg">Beautiful Documentation</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground text-sm">
                   Interactive components that make your design tokens engaging and easy to discover.
                 </p>
               </div>
@@ -37,7 +37,7 @@ export default function Home() {
               <div className="flex flex-col gap-3">
                 <div className="text-3xl">📋</div>
                 <h3 className="font-semibold text-lg">Standards-Inspired</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground text-sm">
                   Aligned with W3C Design Tokens specification for better interoperability.
                 </p>
               </div>
@@ -45,7 +45,7 @@ export default function Home() {
               <div className="flex flex-col gap-3">
                 <div className="text-3xl">🔧</div>
                 <h3 className="font-semibold text-lg">Built on shadcn/ui</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground text-sm">
                   Copy-paste components you own and control. Fully customizable for your brand.
                 </p>
               </div>
@@ -53,16 +53,16 @@ export default function Home() {
           </div>
         </section>
         {/* CTA Section */}
-        <section className="border-t border-border bg-muted/30 py-12 md:py-20">
+        <section className="border-border border-t bg-muted/30 py-12 md:py-20">
           <div className="container mx-auto flex flex-col items-center gap-6 text-center">
             <div>
-              <h2 className="font-semibold text-2xl md:text-3xl mb-3">Ready to get started?</h2>
-              <p className="text-muted-foreground max-w-xl">
+              <h2 className="mb-3 font-semibold text-2xl md:text-3xl">Ready to get started?</h2>
+              <p className="max-w-xl text-muted-foreground">
                 Explore our complete component library and learn how to document your design tokens
                 beautifully.
               </p>
             </div>
-            <div className="flex gap-3 flex-wrap justify-center">
+            <div className="flex flex-wrap justify-center gap-3">
               <CTAButton href="/docs/components/token">View Components</CTAButton>
               <CTAButton variant="outline" href="/docs/overview/spec-compliance">
                 Learn About Standards
