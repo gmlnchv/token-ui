@@ -1,7 +1,7 @@
 import { ArrowUpRight } from 'lucide-react'
-import type { ComponentPropsWithoutRef } from 'react'
+import type * as React from 'react'
 
-type DocsLinkProps = ComponentPropsWithoutRef<'a'>
+type DocsLinkProps = React.ComponentProps<'a'>
 
 export function DocsLink({ children, ...props }: DocsLinkProps) {
   return (

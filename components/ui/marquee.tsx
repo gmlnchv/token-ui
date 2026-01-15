@@ -1,12 +1,8 @@
-import type { ComponentPropsWithoutRef } from 'react'
+import type * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-interface MarqueeProps extends ComponentPropsWithoutRef<'div'> {
-  /**
-   * Optional CSS class name to apply custom styles
-   */
-  className?: string
+type MarqueeProps = React.ComponentProps<'div'> & {
   /**
    * Whether to reverse the animation direction
    * @default false
@@ -17,10 +13,6 @@ interface MarqueeProps extends ComponentPropsWithoutRef<'div'> {
    * @default false
    */
   pauseOnHover?: boolean
-  /**
-   * Content to be displayed in the marquee
-   */
-  children: React.ReactNode
   /**
    * Whether to animate vertically instead of horizontally
    * @default false

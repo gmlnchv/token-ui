@@ -135,19 +135,57 @@ This example shows a spacing token with a custom-styled tooltip and visual previ
 
 A fully composed token component with sensible defaults. Composes `Token` with `TokenName` to provide a button with copy functionality and value tooltip. This is the recommended starting point.
 
-<AutoTypeTable path="registry/components/token.tsx" name="BasicTokenProps" />
+<AutoTypeTable
+  name="BasicTokenProps"
+  type={`
+export type BasicTokenProps = {
+  /** The token name */
+  name: string
+  /** The token value displayed in the tooltip */
+  value: string
+  /**
+   * Whether clicking the token name should copy it to the clipboard.
+   * @default true
+   */
+  copyable?: boolean
+}
+`}
+/>
 
 ### Token
 
 Mid-level composition that accepts custom children as the tooltip trigger. Composes `TokenProvider`, `TokenRoot`, and `TokenValue`. Use when you need to customize the trigger beyond the basic button.
 
-<AutoTypeTable path="registry/components/token.tsx" name="TokenProps" />
+<AutoTypeTable
+  name="TokenProps"
+  type={`
+export type TokenProps = {
+  /** The token name */
+  name: string
+  /** The token value displayed in the tooltip */
+  value: string
+  /** Custom trigger content */
+  children?: React.ReactNode
+}
+`}
+/>
 
 ### TokenProvider
 
 Context provider that makes token name and value available to all child components.
 
-<AutoTypeTable path="registry/components/token.tsx" name="TokenProviderProps" />
+<AutoTypeTable
+  name="TokenProviderProps"
+  type={`
+export type TokenProviderProps = {
+  /** The token name */
+  name: string
+  /** The token value */
+  value: string
+  children: React.ReactNode
+}
+`}
+/>
 
 ### TokenRoot
 
@@ -161,7 +199,20 @@ Button trigger that displays the token name and copies it to the clipboard on cl
 
 <DocsLink href="https://ui.shadcn.com/docs/components/tooltip">Docs</DocsLink>
 
-<AutoTypeTable path="registry/components/token.tsx" name="TokenNameProps" />
+<AutoTypeTable
+  name="TokenNameProps"
+  type={`
+export type TokenNameProps = {
+  /**
+   * Whether clicking the token name should copy it to the clipboard.
+   * @default true
+   */
+  copyable?: boolean
+}
+`}
+/>
+
+Inherits all button props from the underlying `Button` component.
 
 ### TokenValue
 
@@ -173,7 +224,7 @@ Tooltip content wrapper with default spacing. Can display the token value or acc
 
 A context-aware visual indicator that displays the token value as a background color. Reads the value from `TokenProvider` context.
 
-<AutoTypeTable path="registry/components/token.tsx" name="TokenIndicatorProps" />
+Inherits all standard span props from the underlying HTML element.
 
 **Example:**
 

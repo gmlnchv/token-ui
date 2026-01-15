@@ -45,8 +45,7 @@ function TokenProvider({ name, value, children }: TokenProviderProps) {
  * TokenRoot
  * -----------------------------------------------------------------------------------------------*/
 
-type TooltipProps = React.ComponentPropsWithoutRef<typeof Tooltip>
-interface TokenRootProps extends TooltipProps {}
+type TokenRootProps = React.ComponentProps<typeof Tooltip>
 
 /**
  * Tooltip wrapper with default delay.
@@ -60,9 +59,7 @@ function TokenRoot({ delayDuration = 200, ...props }: TokenRootProps) {
  * TokenName
  * -----------------------------------------------------------------------------------------------*/
 
-type ButtonElement = React.ElementRef<typeof Button>
-type ButtonProps = React.ComponentPropsWithoutRef<typeof Button>
-interface TokenNameProps extends Omit<ButtonProps, 'variant'> {
+type TokenNameProps = React.ComponentProps<typeof Button> & {
   /**
    * Whether clicking the token name should copy it to the clipboard.
    * @default true
@@ -75,7 +72,7 @@ interface TokenNameProps extends Omit<ButtonProps, 'variant'> {
  * Defaults to displaying the name from context if no children provided.
  * Use this primitive when building custom token compositions.
  */
-const TokenName = React.forwardRef<ButtonElement, TokenNameProps>(
+const TokenName = React.forwardRef<React.ElementRef<typeof Button>, TokenNameProps>(
   ({ children, onClick, copyable = true, ...props }, forwardedRef) => {
     const { name } = useTokenContext()
     const [isCopied, setIsCopied] = React.useState(false)
@@ -135,8 +132,7 @@ TokenName.displayName = 'TokenName'
  * TokenValue
  * -----------------------------------------------------------------------------------------------*/
 
-type TooltipContentProps = React.ComponentPropsWithoutRef<typeof TooltipContent>
-interface TokenValueProps extends TooltipContentProps {}
+type TokenValueProps = React.ComponentProps<typeof TooltipContent>
 
 /**
  * Tooltip content that displays the token value from context.
@@ -154,15 +150,13 @@ TokenValue.displayName = 'TokenValue'
  * TokenIndicator
  * -----------------------------------------------------------------------------------------------*/
 
-type SpanElement = React.ElementRef<'span'>
-type SpanProps = React.ComponentPropsWithoutRef<'span'>
-interface TokenIndicatorProps extends SpanProps {}
+type TokenIndicatorProps = React.ComponentProps<'span'>
 
 /**
  * Context-aware indicator that displays the token value as a background color.
  * Use with TokenName to add visual indicators to tokens.
  */
-const TokenIndicator = React.forwardRef<SpanElement, TokenIndicatorProps>(
+const TokenIndicator = React.forwardRef<HTMLSpanElement, TokenIndicatorProps>(
   ({ className, style, children, ...props }, forwardedRef) => {
     const { value } = useTokenContext()
 
@@ -189,7 +183,7 @@ TokenIndicator.displayName = 'TokenIndicator'
  * Token
  * -----------------------------------------------------------------------------------------------*/
 
-interface TokenProps extends TooltipProps {
+type TokenProps = React.ComponentProps<typeof Tooltip> & {
   /** The token name */
   name: string
   /** The token value displayed in the tooltip */
@@ -218,7 +212,7 @@ function Token({ name, value, children, ...props }: TokenProps) {
  * BasicToken
  * -----------------------------------------------------------------------------------------------*/
 
-interface BasicTokenProps extends TokenProps {
+type BasicTokenProps = TokenProps & {
   /**
    * Whether clicking the token name should copy it to the clipboard.
    * @default true
