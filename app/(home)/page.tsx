@@ -135,15 +135,15 @@ export default function Home() {
                               </tr>
                               <tr className="border-b border-border">
                                 <td className="px-4 py-2 text-sm"><SpacingToken value="8px" name="spaceSmall" /></td>
-                                <td className="px-4 py-2 text-sm font-mono"><code>8px</code></td>
+                                <td className="px-4 py-2 text-sm font-mono"><code className="font-mono rounded bg-muted px-1 py-0.5 text-xs text-foreground/80">8px</code></td>
                               </tr>
                               <tr className="border-b border-border">
                                 <td className="px-4 py-2 text-sm"><SpacingToken value="16px" name="spaceMedium" /></td>
-                                <td className="px-4 py-2 text-sm font-mono"><code>16px</code></td>
+                                <td className="px-4 py-2 text-sm font-mono"><code className="font-mono rounded bg-muted px-1 py-0.5 text-xs text-foreground/80">16px</code></td>
                               </tr>
                               <tr>
                                 <td className="px-4 py-2 text-sm"><SpacingToken value="24px" name="spaceLarge" /></td>
-                                <td className="px-4 py-2 text-sm font-mono"><code>24px</code></td>
+                                <td className="px-4 py-2 text-sm font-mono"><code className="font-mono rounded bg-muted px-1 py-0.5 text-xs text-foreground/80">24px</code></td>
                               </tr>
                             </tbody>
                           </table>
