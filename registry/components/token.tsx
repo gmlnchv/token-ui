@@ -114,6 +114,7 @@ const TokenName = React.forwardRef<React.ElementRef<typeof Button>, TokenNamePro
       <TooltipTrigger asChild>
         <Button
           ref={forwardedRef}
+          size="sm"
           variant="outline"
           onClick={handleClick}
           aria-label={copyable && isCopied ? `Copied ${name}` : `Copy ${name}`}

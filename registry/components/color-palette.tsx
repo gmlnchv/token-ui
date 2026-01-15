@@ -18,7 +18,7 @@ function ColorSwatch({ value, name, className, children, ...props }: ColorSwatch
   return (
     <div
       className={cn(
-        'relative flex-1 group transition-all duration-200 ease-out hover:flex-[1.08] hover:opacity-95',
+        'group relative flex-1 transition-all duration-200 ease-out hover:flex-[1.08] hover:opacity-95',
         className,
       )}
       style={{ backgroundColor: value }}
