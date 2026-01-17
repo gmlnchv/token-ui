@@ -17,6 +17,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Token UI',
   description: 'Component library for Design System Documentation',
+  openGraph: {
+    title: 'Token UI',
+    description: 'Component library for Design System Documentation',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Token UI',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
