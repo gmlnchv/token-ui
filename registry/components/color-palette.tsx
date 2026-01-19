@@ -1,6 +1,7 @@
 'use client'
 
 import type { HTMLAttributes } from 'react'
+import * as React from 'react'
 import { cn } from '@/lib/utils'
 
 /**
@@ -14,50 +15,64 @@ type ColorSwatchProps = HTMLAttributes<HTMLDivElement> & {
   name?: string
 }
 
-function ColorSwatch({ value, name, className, children, ...props }: ColorSwatchProps) {
-  return (
-    <div
-      className={cn(
-        'group relative flex-1 transition-all duration-200 ease-out hover:flex-[1.08] hover:opacity-95',
-        className,
-      )}
-      style={{ backgroundColor: value }}
-      title={name || value}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-}
+const ColorSwatch = React.forwardRef<HTMLDivElement, ColorSwatchProps>(
+  ({ value, name, className, children, ...props }, forwardedRef) => {
+    return (
+      <div
+        ref={forwardedRef}
+        className={cn(
+          'group relative flex-1 transition-all duration-200 ease-out hover:flex-[1.08] hover:opacity-95',
+          className,
+        )}
+        style={{ backgroundColor: value }}
+        title={name || value}
+        {...props}
+      >
+        {children}
+      </div>
+    )
+  },
+)
+
+ColorSwatch.displayName = 'ColorSwatch'
 
 type ColorSwatchLabelProps = HTMLAttributes<HTMLDivElement>
 
-function ColorSwatchLabel({ className, children, ...props }: ColorSwatchLabelProps) {
-  return (
-    <div
-      className={cn(
-        'pointer-events-none absolute inset-0 flex items-center justify-center',
-        'opacity-0 transition-opacity group-hover:opacity-100',
-        className,
-      )}
-      {...props}
-    >
-      <div className="rounded bg-black/70 px-2 py-1 font-mono text-white text-xs shadow-sm">
-        {children}
+const ColorSwatchLabel = React.forwardRef<HTMLDivElement, ColorSwatchLabelProps>(
+  ({ className, children, ...props }, forwardedRef) => {
+    return (
+      <div
+        ref={forwardedRef}
+        className={cn(
+          'pointer-events-none absolute inset-0 flex items-center justify-center',
+          'opacity-0 transition-opacity group-hover:opacity-100',
+          className,
+        )}
+        {...props}
+      >
+        <div className="rounded bg-black/70 px-2 py-1 font-mono text-white text-xs shadow-sm">
+          {children}
+        </div>
       </div>
-    </div>
-  )
-}
+    )
+  },
+)
+
+ColorSwatchLabel.displayName = 'ColorSwatchLabel'
 
 type ColorPaletteLabelProps = HTMLAttributes<HTMLDivElement>
 
-function ColorPaletteLabel({ className, children, ...props }: ColorPaletteLabelProps) {
-  return (
-    <div className={cn('font-medium text-sm', className)} {...props}>
-      {children}
-    </div>
-  )
-}
+const ColorPaletteLabel = React.forwardRef<HTMLDivElement, ColorPaletteLabelProps>(
+  ({ className, children, ...props }, forwardedRef) => {
+    return (
+      <div ref={forwardedRef} className={cn('font-medium text-sm', className)} {...props}>
+        {children}
+      </div>
+    )
+  },
+)
+
+ColorPaletteLabel.displayName = 'ColorPaletteLabel'
 
 // ColorPalette - Convenience wrapper
 
