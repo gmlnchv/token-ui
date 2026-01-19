@@ -1,6 +1,6 @@
 'use client'
 
-import { ColorPalette } from '@/registry/components/color-palette'
+import { ColorPalette, ColorSwatch, ColorSwatchLabel } from '@/registry/components/color-palette'
 import { ColorToken } from '@/registry/components/color-token'
 import { NumberToken } from '@/registry/components/number-token'
 import { SpacingToken } from '@/registry/components/spacing-token'
@@ -86,32 +86,44 @@ export default function Home() {
                     </button>
                   </div>
 
-                  {/* Content */}
+                   {/* Content */}
                   <div className="space-y-4">
                     <div className="grid gap-4 md:grid-cols-3">
                       <div className="space-y-2">
-                        <div
-                          className="flex h-20 w-full items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700"
-                          style={{ backgroundColor: '#3b82f6' }}
+                        <ColorSwatch
+                          value="#3b82f6"
+                          className="h-20 w-full rounded-lg border border-gray-200 dark:border-gray-700"
                         >
-                          <span className="rounded bg-white px-2 py-1 text-xs font-medium text-gray-900 dark:bg-gray-900 dark:text-gray-100">
-                            #3b82f6
-                          </span>
-                        </div>
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="rounded bg-white px-2 py-1 text-xs font-medium text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+                              #3b82f6
+                            </span>
+                          </div>
+                        </ColorSwatch>
                       </div>
                       <div className="space-y-2">
-                        <div className="flex h-20 w-full items-center justify-center rounded-lg border border-gray-200 bg-slate-50 dark:border-gray-700 dark:bg-gray-900">
-                          <span className="rounded bg-white px-2 py-1 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-400">
-                            #1e293b
-                          </span>
-                        </div>
+                        <ColorSwatch
+                          value="#1e293b"
+                          className="h-20 w-full rounded-lg border border-gray-200 bg-slate-50 dark:border-gray-700 dark:bg-gray-900"
+                        >
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="rounded bg-white px-2 py-1 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-400">
+                              #1e293b
+                            </span>
+                          </div>
+                        </ColorSwatch>
                       </div>
                       <div className="space-y-2">
-                        <div className="flex h-20 w-full items-center justify-center rounded-lg border border-gray-200 bg-blue-50 dark:border-gray-700 dark:bg-blue-950/20">
-                          <span className="rounded bg-white px-2 py-1 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-400">
-                            #eff6ff
-                          </span>
-                        </div>
+                        <ColorSwatch
+                          value="#eff6ff"
+                          className="h-20 w-full rounded-lg border border-gray-200 bg-blue-50 dark:border-gray-700 dark:bg-blue-950/20"
+                        >
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="rounded bg-white px-2 py-1 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-400">
+                              #eff6ff
+                            </span>
+                          </div>
+                        </ColorSwatch>
                       </div>
                     </div>
 
