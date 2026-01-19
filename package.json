@@ -2,15 +2,12 @@
   "name": "registry",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "bun@1.2.19",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "bun x @biomejs/biome check --write --unsafe .",
-    "biome:check": "bun x @biomejs/biome check --write --unsafe .",
-    "biome:lint": "bun x @biomejs/biome lint --write --unsafe .",
-    "biome:format": "bun x @biomejs/biome format --write .",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
     "registry:build": "shadcn build"
   },
   "dependencies": {
@@ -40,16 +37,17 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.2",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "^20.19.9",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "oxfmt": "^0.24.0",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.9.2"
   },
   "overrides": {
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2"
-  }
+  },
+  "packageManager": "bun@1.2.19"
 }

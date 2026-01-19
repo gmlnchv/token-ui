@@ -14,7 +14,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="border-border border-t bg-background">
+    <footer className="border-border bg-background border-t">
       <div className="p-4">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="text-muted-foreground text-sm">
@@ -25,7 +25,7 @@ export function Footer() {
               href="https://github.com/gmlnchv/token-ui"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground text-sm transition-colors hover:text-foreground"
+              className="text-muted-foreground hover:text-foreground text-sm transition-colors"
               onClick={handleGitHubClick}
             >
               GitHub

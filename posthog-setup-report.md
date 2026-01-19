@@ -11,24 +11,26 @@ The wizard has completed a deep integration of PostHog into your Token UI Next.j
 
 ## Events Instrumented
 
-| Event Name | Description | File |
-|------------|-------------|------|
-| `copy_button_clicked` | User clicked the copy button to copy content to clipboard | `components/copy-button.tsx` |
-| `installer_command_copied` | User copied the package installation command | `components/installer.tsx` |
-| `preview_tab_changed` | User switched between code and preview tabs | `components/preview.tsx` |
-| `cta_button_clicked` | User clicked the main CTA button on the homepage | `components/cta-button.tsx` |
-| `github_link_clicked` | User clicked the GitHub link in the footer | `components/footer.tsx` |
-| `search_performed` | User performed a search in the documentation (server-side) | `app/api/search/route.ts` |
+| Event Name                 | Description                                                | File                         |
+| -------------------------- | ---------------------------------------------------------- | ---------------------------- |
+| `copy_button_clicked`      | User clicked the copy button to copy content to clipboard  | `components/copy-button.tsx` |
+| `installer_command_copied` | User copied the package installation command               | `components/installer.tsx`   |
+| `preview_tab_changed`      | User switched between code and preview tabs                | `components/preview.tsx`     |
+| `cta_button_clicked`       | User clicked the main CTA button on the homepage           | `components/cta-button.tsx`  |
+| `github_link_clicked`      | User clicked the GitHub link in the footer                 | `components/footer.tsx`      |
+| `search_performed`         | User performed a search in the documentation (server-side) | `app/api/search/route.ts`    |
 
 ## Files Created/Modified
 
 ### New Files
+
 - `instrumentation-client.ts` - Client-side PostHog initialization
 - `lib/posthog-server.ts` - Server-side PostHog client
 - `components/cta-button.tsx` - CTA button component with tracking
 - `.env` - Environment variables for PostHog
 
 ### Modified Files
+
 - `next.config.mjs` - Added reverse proxy rewrites
 - `components/copy-button.tsx` - Added copy event tracking and error capture
 - `components/installer.tsx` - Added install command copy tracking
@@ -42,9 +44,11 @@ The wizard has completed a deep integration of PostHog into your Token UI Next.j
 We've built some insights and a dashboard for you to keep an eye on user behavior, based on the events we just instrumented:
 
 ### Dashboard
+
 - [Analytics basics](https://us.posthog.com/project/277865/dashboard/971203) - Your main analytics dashboard
 
 ### Insights
+
 - [Install Commands Copied Over Time](https://us.posthog.com/project/277865/insights/7tmcJ5Ke) - Track package installation intent
 - [Homepage to Docs Conversion Funnel](https://us.posthog.com/project/277865/insights/4xZBPuZP) - Measure visitor-to-user conversion
 - [Code vs Preview Tab Usage](https://us.posthog.com/project/277865/insights/QzUn7f98) - Understand user engagement style

@@ -22,7 +22,7 @@ const ColorSwatch = React.forwardRef<HTMLDivElement, ColorSwatchProps>(
         ref={forwardedRef}
         className={cn(
           'group relative flex-1 transition-all duration-200 ease-out hover:flex-[1.08] hover:opacity-95',
-          className,
+          className
         )}
         style={{ backgroundColor: value }}
         title={name || value}
@@ -31,7 +31,7 @@ const ColorSwatch = React.forwardRef<HTMLDivElement, ColorSwatchProps>(
         {children}
       </div>
     )
-  },
+  }
 )
 
 ColorSwatch.displayName = 'ColorSwatch'
@@ -46,16 +46,16 @@ const ColorSwatchLabel = React.forwardRef<HTMLDivElement, ColorSwatchLabelProps>
         className={cn(
           'pointer-events-none absolute inset-0 flex items-center justify-center',
           'opacity-0 transition-opacity group-hover:opacity-100',
-          className,
+          className
         )}
         {...props}
       >
-        <div className="rounded bg-black/70 px-2 py-1 font-mono text-white text-xs shadow-sm">
+        <div className="rounded bg-black/70 px-2 py-1 font-mono text-xs text-white shadow-sm">
           {children}
         </div>
       </div>
     )
-  },
+  }
 )
 
 ColorSwatchLabel.displayName = 'ColorSwatchLabel'
@@ -65,11 +65,11 @@ type ColorPaletteLabelProps = HTMLAttributes<HTMLDivElement>
 const ColorPaletteLabel = React.forwardRef<HTMLDivElement, ColorPaletteLabelProps>(
   ({ className, children, ...props }, forwardedRef) => {
     return (
-      <div ref={forwardedRef} className={cn('font-medium text-sm', className)} {...props}>
+      <div ref={forwardedRef} className={cn('text-sm font-medium', className)} {...props}>
         {children}
       </div>
     )
-  },
+  }
 )
 
 ColorPaletteLabel.displayName = 'ColorPaletteLabel'
@@ -99,8 +99,8 @@ type ColorPaletteProps = {
  * Compose your own container plus `ColorSwatch`/`ColorSwatchLabel` for custom layouts.
  */
 function ColorPalette({ colors, orientation = 'horizontal', label, className }: ColorPaletteProps) {
-  const colorStops: ColorStop[] = colors.map((color) =>
-    typeof color === 'string' ? { value: color } : color,
+  const colorStops: ColorStop[] = colors.map(color =>
+    typeof color === 'string' ? { value: color } : color
   )
 
   const orientationClass = orientation === 'vertical' ? 'flex-col h-64' : 'flex-row h-20'

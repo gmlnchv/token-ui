@@ -107,7 +107,7 @@ const TokenName = React.forwardRef<React.ElementRef<typeof Button>, TokenNamePro
           // Silently fail
         }
       },
-      [name, onClick, copyable],
+      [name, onClick, copyable]
     )
 
     return (
@@ -124,7 +124,7 @@ const TokenName = React.forwardRef<React.ElementRef<typeof Button>, TokenNamePro
         </Button>
       </TooltipTrigger>
     )
-  },
+  }
 )
 
 TokenName.displayName = 'TokenName'
@@ -142,7 +142,7 @@ type TokenValueProps = React.ComponentProps<typeof TooltipContent>
 const TokenValue = React.forwardRef<React.ElementRef<typeof TooltipContent>, TokenValueProps>(
   ({ sideOffset = 4, ...props }, forwardedRef) => {
     return <TooltipContent ref={forwardedRef} sideOffset={sideOffset} {...props} />
-  },
+  }
 )
 
 TokenValue.displayName = 'TokenValue'
@@ -167,7 +167,7 @@ const TokenIndicator = React.forwardRef<HTMLSpanElement, TokenIndicatorProps>(
         aria-hidden
         className={cn(
           'inline-flex size-4 items-center justify-center rounded-full align-middle',
-          className,
+          className
         )}
         style={{ backgroundColor: value, ...style }}
         {...props}
@@ -175,7 +175,7 @@ const TokenIndicator = React.forwardRef<HTMLSpanElement, TokenIndicatorProps>(
         {children}
       </span>
     )
-  },
+  }
 )
 
 TokenIndicator.displayName = 'TokenIndicator'

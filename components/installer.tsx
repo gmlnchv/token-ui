@@ -15,11 +15,11 @@ export function Installer({ packageName }: { packageName: string }) {
   }
 
   return (
-    <div className="relative rounded-md border border-border p-4">
-      <pre className="truncate bg-background pr-12 font-mono text-sm">{command}</pre>
+    <div className="border-border relative rounded-md border p-4">
+      <pre className="bg-background truncate pr-12 font-mono text-sm">{command}</pre>
       <CopyButton
         aria-label="Copy install command"
-        className="absolute top-2 right-2"
+        className="absolute right-2 top-2"
         size="icon"
         value={command}
         variant="ghost"

@@ -18,7 +18,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     Preview,
     VariantNote,
     DocsLink,
-    AutoTypeTable: (props) => <AutoTypeTable {...props} generator={generator} />,
+    AutoTypeTable: props => <AutoTypeTable {...props} generator={generator} />,
     ...components,
   }
 }

@@ -3,7 +3,15 @@ title: Token
 description: A component for displaying name/value pairs as interactive tooltips. Serves as the base primitive for specialized token variants.
 ---
 
-import { BasicToken as Token, Token as TokenComposed, TokenName, TokenProvider, TokenRoot, TokenValue, TokenIndicator } from '@/registry/components/token'
+import {
+  BasicToken as Token,
+  Token as TokenComposed,
+  TokenName,
+  TokenProvider,
+  TokenRoot,
+  TokenValue,
+  TokenIndicator,
+} from '@/registry/components/token'
 import { TooltipTrigger, TooltipContent } from '@/registry/ui/tooltip'
 import { AlertTriangle, Blend } from 'lucide-react'
 
@@ -291,6 +299,7 @@ import { Blend } from 'lucide-react'
         <span>color-surface-brand</span>
       </TokenName>
     </Token>
+
   </div>`}>
   <div className="flex flex-wrap items-center gap-3">
     <TokenComposed name="color-primary-500" value="#3B82F6">
@@ -315,5 +324,6 @@ import { Blend } from 'lucide-react'
         <span>color-surface-brand</span>
       </TokenName>
     </TokenComposed>
+
   </div>
 </Preview>

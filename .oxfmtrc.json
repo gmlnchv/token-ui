@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": false,
+  "singleQuote": true,
+  "quoteProperties": "as-needed",
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "experimentalTailwindcss": {
+    "config": "./tailwind.config.ts",
+    "attributes": ["class", "className"],
+    "functions": ["clsx", "cn", "cva", "tw"],
+    "preserveDuplicates": false,
+    "preserveWhitespace": false
+  }
+}

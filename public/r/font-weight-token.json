@@ -4,12 +4,8 @@
   "type": "registry:component",
   "title": "FontWeightToken",
   "description": "A token variant with a weight icon for font weight values.",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@tokenui/icon-token"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@tokenui/icon-token"],
   "files": [
     {
       "path": "registry/components/font-weight-token.tsx",

@@ -28,7 +28,7 @@ export function Preview({ children, code }: PreviewProps) {
   }
 
   return (
-    <div className="not-prose my-6 overflow-hidden rounded-lg border bg-background">
+    <div className="not-prose bg-background my-6 overflow-hidden rounded-lg border">
       <Tabs defaultValue="preview" className="gap-0" onValueChange={handleTabChange}>
         <TabsList className="w-full rounded-none border-b">
           <TabsTrigger value="code">
@@ -41,20 +41,20 @@ export function Preview({ children, code }: PreviewProps) {
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="code" className="overflow-y-auto bg-background">
+        <TabsContent value="code" className="bg-background overflow-y-auto">
           {highlightedCode ? (
             <figure data-rehype-pretty-code-figure="">
               {/** biome-ignore lint/security/noDangerouslySetInnerHtml: this is not user input */}
               <div dangerouslySetInnerHTML={{ __html: highlightedCode }} />
             </figure>
           ) : (
-            <pre className="m-0 overflow-x-auto bg-muted/50 p-4">
+            <pre className="bg-muted/50 m-0 overflow-x-auto p-4">
               <code className="font-mono text-sm">{code}</code>
             </pre>
           )}
         </TabsContent>
 
-        <TabsContent value="preview" className="overflow-y-auto bg-background p-6">
+        <TabsContent value="preview" className="bg-background overflow-y-auto p-6">
           {children}
         </TabsContent>
       </Tabs>

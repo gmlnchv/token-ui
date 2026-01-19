@@ -7,7 +7,7 @@ export const docs = defineDocs({
 
 export default defineConfig({
   mdxOptions: {
-    rehypePlugins: (plugins) => {
+    rehypePlugins: plugins => {
       plugins.shift()
       plugins.push([
         rehypePrettyCode,

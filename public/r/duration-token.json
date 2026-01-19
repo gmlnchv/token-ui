@@ -4,12 +4,8 @@
   "type": "registry:component",
   "title": "DurationToken",
   "description": "A token variant with a timer icon for animation or transition durations.",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@tokenui/icon-token"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@tokenui/icon-token"],
   "files": [
     {
       "path": "registry/components/duration-token.tsx",

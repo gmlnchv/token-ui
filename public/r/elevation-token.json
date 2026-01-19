@@ -4,12 +4,8 @@
   "type": "registry:component",
   "title": "ElevationToken",
   "description": "A token variant with a layers icon for elevation and shadow values.",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@tokenui/icon-token"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@tokenui/icon-token"],
   "files": [
     {
       "path": "registry/components/elevation-token.tsx",
